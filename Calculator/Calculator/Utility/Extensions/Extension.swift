@@ -38,4 +38,3 @@ extension ExtensionCompatible {
         return Extension(self)
     }
 }
-

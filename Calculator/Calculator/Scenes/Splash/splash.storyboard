@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k9O-nJ-Vcu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="R1X-Bm-Pfv">
+            <objects>
+                <viewController id="k9O-nJ-Vcu" customClass="SplashViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eC-Yd-XBe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Calculator" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-rK-hHV">
+                                <rect key="frame" x="65.5" y="180" width="244" height="55"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="49"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9aN-rK-hHV" firstAttribute="leading" secondItem="k5s-Tl-acj" secondAttribute="leading" constant="65" id="1Jg-ia-nra"/>
+                            <constraint firstItem="k5s-Tl-acj" firstAttribute="trailing" secondItem="9aN-rK-hHV" secondAttribute="trailing" constant="65" id="Bgs-lG-xo9"/>
+                            <constraint firstItem="9aN-rK-hHV" firstAttribute="top" secondItem="k5s-Tl-acj" secondAttribute="top" constant="160" id="huh-x1-UwJ"/>
+                            <constraint firstItem="9aN-rK-hHV" firstAttribute="centerX" secondItem="1eC-Yd-XBe" secondAttribute="centerX" id="rdp-8E-CBv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k5s-Tl-acj"/>
+                    </view>
+                    <connections>
+                        <outlet property="appName" destination="9aN-rK-hHV" id="CW5-eT-5XM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnD-UQ-xsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>

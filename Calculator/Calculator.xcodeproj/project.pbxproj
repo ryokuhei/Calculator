@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2DD1FF20EFB2E500F213DE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2DD1FE20EFB2E500F213DE /* R.generated.swift */; };
+		6E2DD20220EFB51100F213DE /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2DD20120EFB51100F213DE /* SplashWireframe.swift */; };
+		6E4D83E020EFA8A100C39B6A /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D83DF20EFA8A100C39B6A /* SplashBuilder.swift */; };
 		6E5282AB20EE620B0084837C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E682C9620EE5D8E00A48842 /* Calculator.swift */; };
 		6E5282AC20EE620B0084837C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E682C9620EE5D8E00A48842 /* Calculator.swift */; };
 		6E5282B020EF90F60084837C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5282AF20EF90F60084837C /* Extension.swift */; };
+		6E5282B220EF95250084837C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5282B120EF95250084837C /* RootViewController.swift */; };
+		6E5282B520EF98910084837C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5282B420EF98910084837C /* SplashViewController.swift */; };
+		6E5282B720EF98D90084837C /* splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5282B620EF98D90084837C /* splash.storyboard */; };
+		6E5282B920EFA1B50084837C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5282B820EFA1B50084837C /* SplashViewModel.swift */; };
 		6E682C9720EE5D8E00A48842 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E682C9620EE5D8E00A48842 /* Calculator.swift */; };
 		6E8D00E220EE49ED00F17B0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D00E120EE49ED00F17B0A /* AppDelegate.swift */; };
 		6E8D00E420EE49ED00F17B0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D00E320EE49ED00F17B0A /* ViewController.swift */; };
@@ -45,7 +52,14 @@
 		1189C2333217C2B83B67E4B7 /* Pods-CalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51F68BD74F32EF218D6F04A1 /* Pods-CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59BED3C757532EFD0918435B /* Pods-Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculator/Pods-Calculator.release.xcconfig"; sourceTree = "<group>"; };
+		6E2DD1FE20EFB2E500F213DE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Calculator/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		6E2DD20120EFB51100F213DE /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
+		6E4D83DF20EFA8A100C39B6A /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
 		6E5282AF20EF90F60084837C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		6E5282B120EF95250084837C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		6E5282B420EF98910084837C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		6E5282B620EF98D90084837C /* splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = splash.storyboard; sourceTree = "<group>"; };
+		6E5282B820EFA1B50084837C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		6E682C9620EE5D8E00A48842 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		6E8D00DE20EE49ED00F17B0A /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8D00E120EE49ED00F17B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,9 +111,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E2DD20020EFB4AD00F213DE /* Wireframes */ = {
+			isa = PBXGroup;
+			children = (
+				6E2DD20120EFB51100F213DE /* SplashWireframe.swift */,
+			);
+			path = Wireframes;
+			sourceTree = "<group>";
+		};
+		6E4D83DE20EFA85D00C39B6A /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				6E4D83DF20EFA8A100C39B6A /* SplashBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
 		6E5282AD20EF88D10084837C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				6E2DD20020EFB4AD00F213DE /* Wireframes */,
+				6E4D83DE20EFA85D00C39B6A /* Builders */,
 				6E5282AE20EF88F20084837C /* Extensions */,
 			);
 			path = Utility;
@@ -113,9 +145,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6E5282B320EF98530084837C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				6E5282B420EF98910084837C /* SplashViewController.swift */,
+				6E5282B620EF98D90084837C /* splash.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		6E682C9120EE5CAE00A48842 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6E5282B320EF98530084837C /* Splash */,
 				6E682C9320EE5D0300A48842 /* Caluculator */,
 				6E682C9220EE5CE900A48842 /* RootViewController */,
 			);
@@ -125,6 +167,7 @@
 		6E682C9220EE5CE900A48842 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6E5282B120EF95250084837C /* RootViewController.swift */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -136,19 +179,20 @@
 			path = Caluculator;
 			sourceTree = "<group>";
 		};
-		6E682C9420EE5D1200A48842 /* ViewModel */ = {
+		6E682C9420EE5D1200A48842 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6E5282B820EFA1B50084837C /* SplashViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		6E682C9520EE5D6A00A48842 /* Model */ = {
+		6E682C9520EE5D6A00A48842 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6E682C9620EE5D8E00A48842 /* Calculator.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6E8D00D520EE49ED00F17B0A = {
@@ -176,11 +220,12 @@
 		6E8D00E020EE49ED00F17B0A /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				6E5282AD20EF88D10084837C /* Utility */,
-				6E682C9520EE5D6A00A48842 /* Model */,
-				6E682C9420EE5D1200A48842 /* ViewModel */,
+				6E682C9520EE5D6A00A48842 /* Models */,
+				6E682C9420EE5D1200A48842 /* ViewModels */,
 				6E682C9120EE5CAE00A48842 /* Scenes */,
+				6E5282AD20EF88D10084837C /* Utility */,
 				6E8D00E120EE49ED00F17B0A /* AppDelegate.swift */,
+				6E2DD1FE20EFB2E500F213DE /* R.generated.swift */,
 				6E8D00E320EE49ED00F17B0A /* ViewController.swift */,
 				6E8D00E520EE49ED00F17B0A /* Main.storyboard */,
 				6E8D00EB20EE49EF00F17B0A /* Assets.xcassets */,
@@ -244,6 +289,7 @@
 				6E8D00DA20EE49ED00F17B0A /* Sources */,
 				6E8D00DB20EE49ED00F17B0A /* Frameworks */,
 				6E8D00DC20EE49ED00F17B0A /* Resources */,
+				2AED0A5061CA166E14269A54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,7 +308,6 @@
 				6E8D00F120EE49EF00F17B0A /* Sources */,
 				6E8D00F220EE49EF00F17B0A /* Frameworks */,
 				6E8D00F320EE49EF00F17B0A /* Resources */,
-				7D06CBB7AFE8EEBCFBC1CAE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,6 +389,7 @@
 				6E8D00EF20EE49EF00F17B0A /* LaunchScreen.storyboard in Resources */,
 				6E8D00EC20EE49EF00F17B0A /* Assets.xcassets in Resources */,
 				6E8D00E720EE49ED00F17B0A /* Main.storyboard in Resources */,
+				6E5282B720EF98D90084837C /* splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +410,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2AED0A5061CA166E14269A54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Calculator/Pods-Calculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Calculator/Pods-Calculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6286CD96744AA23370CA3731 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,28 +462,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
-		};
-		7D06CBB7AFE8EEBCFBC1CAE0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		BBFEBB8C6F5D6D900871E92D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -462,9 +508,15 @@
 			files = (
 				6E5282B020EF90F60084837C /* Extension.swift in Sources */,
 				6E8D00E420EE49ED00F17B0A /* ViewController.swift in Sources */,
+				6E4D83E020EFA8A100C39B6A /* SplashBuilder.swift in Sources */,
+				6E5282B220EF95250084837C /* RootViewController.swift in Sources */,
 				6E682C9720EE5D8E00A48842 /* Calculator.swift in Sources */,
 				6E8D00E220EE49ED00F17B0A /* AppDelegate.swift in Sources */,
+				6E5282B520EF98910084837C /* SplashViewController.swift in Sources */,
+				6E2DD1FF20EFB2E500F213DE /* R.generated.swift in Sources */,
+				6E2DD20220EFB51100F213DE /* SplashWireframe.swift in Sources */,
 				6E8D00EA20EE49ED00F17B0A /* Calculator.xcdatamodeld in Sources */,
+				6E5282B920EFA1B50084837C /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
