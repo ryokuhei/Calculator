@@ -1,0 +1,813 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E5282AB20EE620B0084837C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E682C9620EE5D8E00A48842 /* Calculator.swift */; };
+		6E5282AC20EE620B0084837C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E682C9620EE5D8E00A48842 /* Calculator.swift */; };
+		6E682C9720EE5D8E00A48842 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E682C9620EE5D8E00A48842 /* Calculator.swift */; };
+		6E8D00E220EE49ED00F17B0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D00E120EE49ED00F17B0A /* AppDelegate.swift */; };
+		6E8D00E420EE49ED00F17B0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D00E320EE49ED00F17B0A /* ViewController.swift */; };
+		6E8D00E720EE49ED00F17B0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D00E520EE49ED00F17B0A /* Main.storyboard */; };
+		6E8D00EA20EE49ED00F17B0A /* Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D00E820EE49ED00F17B0A /* Calculator.xcdatamodeld */; };
+		6E8D00EC20EE49EF00F17B0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D00EB20EE49EF00F17B0A /* Assets.xcassets */; };
+		6E8D00EF20EE49EF00F17B0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8D00ED20EE49EF00F17B0A /* LaunchScreen.storyboard */; };
+		6E8D00FA20EE49EF00F17B0A /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D00F920EE49EF00F17B0A /* CalculatorTests.swift */; };
+		6E8D010520EE49EF00F17B0A /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D010420EE49EF00F17B0A /* CalculatorUITests.swift */; };
+		7CB4229981A63689D6F8DC9C /* Pods_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3BEDCA8DD4BD3E3BA55FC2 /* Pods_Calculator.framework */; };
+		8E116A6F2888BCD39BF72BE8 /* Pods_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2188F65F8E97D263A4659A /* Pods_CalculatorTests.framework */; };
+		C4A3FDAB1C1DBE391BEE1E10 /* Pods_CalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E8D00F620EE49EF00F17B0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8D00D620EE49ED00F17B0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E8D00DD20EE49ED00F17B0A;
+			remoteInfo = Calculator;
+		};
+		6E8D010120EE49EF00F17B0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8D00D620EE49ED00F17B0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E8D00DD20EE49ED00F17B0A;
+			remoteInfo = Calculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1189C2333217C2B83B67E4B7 /* Pods-CalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		51F68BD74F32EF218D6F04A1 /* Pods-CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59BED3C757532EFD0918435B /* Pods-Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculator/Pods-Calculator.release.xcconfig"; sourceTree = "<group>"; };
+		6E682C9620EE5D8E00A48842 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		6E8D00DE20EE49ED00F17B0A /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8D00E120EE49ED00F17B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6E8D00E320EE49ED00F17B0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E8D00E620EE49ED00F17B0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E8D00E920EE49ED00F17B0A /* Calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calculator.xcdatamodel; sourceTree = "<group>"; };
+		6E8D00EB20EE49EF00F17B0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E8D00EE20EE49EF00F17B0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6E8D00F020EE49EF00F17B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E8D00F520EE49EF00F17B0A /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8D00F920EE49EF00F17B0A /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		6E8D00FB20EE49EF00F17B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E8D010020EE49EF00F17B0A /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8D010420EE49EF00F17B0A /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
+		6E8D010620EE49EF00F17B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96CE90B5C49E205C8A271AB4 /* Pods-CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C27454CD0F7CD7E37C7212A /* Pods-CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE3BEDCA8DD4BD3E3BA55FC2 /* Pods_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2188F65F8E97D263A4659A /* Pods_CalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED24CEB3D86D73722B9310C2 /* Pods-Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calculator/Pods-Calculator.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E8D00DB20EE49ED00F17B0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB4229981A63689D6F8DC9C /* Pods_Calculator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E8D00F220EE49EF00F17B0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E116A6F2888BCD39BF72BE8 /* Pods_CalculatorTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E8D00FD20EE49EF00F17B0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A3FDAB1C1DBE391BEE1E10 /* Pods_CalculatorUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E5282AD20EF88D10084837C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6E5282AE20EF88F20084837C /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		6E5282AE20EF88F20084837C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6E682C9120EE5CAE00A48842 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6E682C9320EE5D0300A48842 /* Caluculator */,
+				6E682C9220EE5CE900A48842 /* RootViewController */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6E682C9220EE5CE900A48842 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		6E682C9320EE5D0300A48842 /* Caluculator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Caluculator;
+			sourceTree = "<group>";
+		};
+		6E682C9420EE5D1200A48842 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6E682C9520EE5D6A00A48842 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E682C9620EE5D8E00A48842 /* Calculator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E8D00D520EE49ED00F17B0A = {
+			isa = PBXGroup;
+			children = (
+				6E8D00E020EE49ED00F17B0A /* Calculator */,
+				6E8D00F820EE49EF00F17B0A /* CalculatorTests */,
+				6E8D010320EE49EF00F17B0A /* CalculatorUITests */,
+				6E8D00DF20EE49ED00F17B0A /* Products */,
+				D2FF81F79E29972B8E324E8F /* Pods */,
+				BB497A91BC36A53208FF675E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6E8D00DF20EE49ED00F17B0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D00DE20EE49ED00F17B0A /* Calculator.app */,
+				6E8D00F520EE49EF00F17B0A /* CalculatorTests.xctest */,
+				6E8D010020EE49EF00F17B0A /* CalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E8D00E020EE49ED00F17B0A /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				6E5282AD20EF88D10084837C /* Utility */,
+				6E682C9520EE5D6A00A48842 /* Model */,
+				6E682C9420EE5D1200A48842 /* ViewModel */,
+				6E682C9120EE5CAE00A48842 /* Scenes */,
+				6E8D00E120EE49ED00F17B0A /* AppDelegate.swift */,
+				6E8D00E320EE49ED00F17B0A /* ViewController.swift */,
+				6E8D00E520EE49ED00F17B0A /* Main.storyboard */,
+				6E8D00EB20EE49EF00F17B0A /* Assets.xcassets */,
+				6E8D00ED20EE49EF00F17B0A /* LaunchScreen.storyboard */,
+				6E8D00F020EE49EF00F17B0A /* Info.plist */,
+				6E8D00E820EE49ED00F17B0A /* Calculator.xcdatamodeld */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		6E8D00F820EE49EF00F17B0A /* CalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D00F920EE49EF00F17B0A /* CalculatorTests.swift */,
+				6E8D00FB20EE49EF00F17B0A /* Info.plist */,
+			);
+			path = CalculatorTests;
+			sourceTree = "<group>";
+		};
+		6E8D010320EE49EF00F17B0A /* CalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D010420EE49EF00F17B0A /* CalculatorUITests.swift */,
+				6E8D010620EE49EF00F17B0A /* Info.plist */,
+			);
+			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		BB497A91BC36A53208FF675E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE3BEDCA8DD4BD3E3BA55FC2 /* Pods_Calculator.framework */,
+				DF2188F65F8E97D263A4659A /* Pods_CalculatorTests.framework */,
+				8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2FF81F79E29972B8E324E8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED24CEB3D86D73722B9310C2 /* Pods-Calculator.debug.xcconfig */,
+				59BED3C757532EFD0918435B /* Pods-Calculator.release.xcconfig */,
+				51F68BD74F32EF218D6F04A1 /* Pods-CalculatorTests.debug.xcconfig */,
+				96CE90B5C49E205C8A271AB4 /* Pods-CalculatorTests.release.xcconfig */,
+				1189C2333217C2B83B67E4B7 /* Pods-CalculatorUITests.debug.xcconfig */,
+				9C27454CD0F7CD7E37C7212A /* Pods-CalculatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E8D00DD20EE49ED00F17B0A /* Calculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E8D010920EE49EF00F17B0A /* Build configuration list for PBXNativeTarget "Calculator" */;
+			buildPhases = (
+				DD32D30094378095E74F863A /* [CP] Check Pods Manifest.lock */,
+				6E204CB020EE4E5500562631 /* ShellScript */,
+				6E8D00DA20EE49ED00F17B0A /* Sources */,
+				6E8D00DB20EE49ED00F17B0A /* Frameworks */,
+				6E8D00DC20EE49ED00F17B0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Calculator;
+			productName = Calculator;
+			productReference = 6E8D00DE20EE49ED00F17B0A /* Calculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E8D00F420EE49EF00F17B0A /* CalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E8D010C20EE49EF00F17B0A /* Build configuration list for PBXNativeTarget "CalculatorTests" */;
+			buildPhases = (
+				6286CD96744AA23370CA3731 /* [CP] Check Pods Manifest.lock */,
+				6E8D00F120EE49EF00F17B0A /* Sources */,
+				6E8D00F220EE49EF00F17B0A /* Frameworks */,
+				6E8D00F320EE49EF00F17B0A /* Resources */,
+				7D06CBB7AFE8EEBCFBC1CAE0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E8D00F720EE49EF00F17B0A /* PBXTargetDependency */,
+			);
+			name = CalculatorTests;
+			productName = CalculatorTests;
+			productReference = 6E8D00F520EE49EF00F17B0A /* CalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E8D00FF20EE49EF00F17B0A /* CalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E8D010F20EE49EF00F17B0A /* Build configuration list for PBXNativeTarget "CalculatorUITests" */;
+			buildPhases = (
+				BBFEBB8C6F5D6D900871E92D /* [CP] Check Pods Manifest.lock */,
+				6E8D00FC20EE49EF00F17B0A /* Sources */,
+				6E8D00FD20EE49EF00F17B0A /* Frameworks */,
+				6E8D00FE20EE49EF00F17B0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E8D010220EE49EF00F17B0A /* PBXTargetDependency */,
+			);
+			name = CalculatorUITests;
+			productName = CalculatorUITests;
+			productReference = 6E8D010020EE49EF00F17B0A /* CalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E8D00D620EE49ED00F17B0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = ryokuhei_sato;
+				TargetAttributes = {
+					6E8D00DD20EE49ED00F17B0A = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					6E8D00F420EE49EF00F17B0A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6E8D00DD20EE49ED00F17B0A;
+					};
+					6E8D00FF20EE49EF00F17B0A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6E8D00DD20EE49ED00F17B0A;
+					};
+				};
+			};
+			buildConfigurationList = 6E8D00D920EE49ED00F17B0A /* Build configuration list for PBXProject "Calculator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E8D00D520EE49ED00F17B0A;
+			productRefGroup = 6E8D00DF20EE49ED00F17B0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E8D00DD20EE49ED00F17B0A /* Calculator */,
+				6E8D00F420EE49EF00F17B0A /* CalculatorTests */,
+				6E8D00FF20EE49EF00F17B0A /* CalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E8D00DC20EE49ED00F17B0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E8D00EF20EE49EF00F17B0A /* LaunchScreen.storyboard in Resources */,
+				6E8D00EC20EE49EF00F17B0A /* Assets.xcassets in Resources */,
+				6E8D00E720EE49ED00F17B0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E8D00F320EE49EF00F17B0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E8D00FE20EE49EF00F17B0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6286CD96744AA23370CA3731 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E204CB020EE4E5500562631 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+		};
+		7D06CBB7AFE8EEBCFBC1CAE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBFEBB8C6F5D6D900871E92D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculatorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD32D30094378095E74F863A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E8D00DA20EE49ED00F17B0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E8D00E420EE49ED00F17B0A /* ViewController.swift in Sources */,
+				6E682C9720EE5D8E00A48842 /* Calculator.swift in Sources */,
+				6E8D00E220EE49ED00F17B0A /* AppDelegate.swift in Sources */,
+				6E8D00EA20EE49ED00F17B0A /* Calculator.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E8D00F120EE49EF00F17B0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E8D00FA20EE49EF00F17B0A /* CalculatorTests.swift in Sources */,
+				6E5282AB20EE620B0084837C /* Calculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E8D00FC20EE49EF00F17B0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E8D010520EE49EF00F17B0A /* CalculatorUITests.swift in Sources */,
+				6E5282AC20EE620B0084837C /* Calculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E8D00F720EE49EF00F17B0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E8D00DD20EE49ED00F17B0A /* Calculator */;
+			targetProxy = 6E8D00F620EE49EF00F17B0A /* PBXContainerItemProxy */;
+		};
+		6E8D010220EE49EF00F17B0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E8D00DD20EE49ED00F17B0A /* Calculator */;
+			targetProxy = 6E8D010120EE49EF00F17B0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E8D00E520EE49ED00F17B0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E8D00E620EE49ED00F17B0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E8D00ED20EE49EF00F17B0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E8D00EE20EE49EF00F17B0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E8D010720EE49EF00F17B0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6E8D010820EE49EF00F17B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E8D010A20EE49EF00F17B0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED24CEB3D86D73722B9310C2 /* Pods-Calculator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KS9CMH847B;
+				INFOPLIST_FILE = Calculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryokuhei.Calculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E8D010B20EE49EF00F17B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59BED3C757532EFD0918435B /* Pods-Calculator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KS9CMH847B;
+				INFOPLIST_FILE = Calculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryokuhei.Calculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6E8D010D20EE49EF00F17B0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F68BD74F32EF218D6F04A1 /* Pods-CalculatorTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KS9CMH847B;
+				INFOPLIST_FILE = CalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryokuhei.CalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
+			};
+			name = Debug;
+		};
+		6E8D010E20EE49EF00F17B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96CE90B5C49E205C8A271AB4 /* Pods-CalculatorTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KS9CMH847B;
+				INFOPLIST_FILE = CalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryokuhei.CalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
+			};
+			name = Release;
+		};
+		6E8D011020EE49EF00F17B0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1189C2333217C2B83B67E4B7 /* Pods-CalculatorUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KS9CMH847B;
+				INFOPLIST_FILE = CalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryokuhei.CalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Calculator;
+			};
+			name = Debug;
+		};
+		6E8D011120EE49EF00F17B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C27454CD0F7CD7E37C7212A /* Pods-CalculatorUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KS9CMH847B;
+				INFOPLIST_FILE = CalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryokuhei.CalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Calculator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E8D00D920EE49ED00F17B0A /* Build configuration list for PBXProject "Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E8D010720EE49EF00F17B0A /* Debug */,
+				6E8D010820EE49EF00F17B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E8D010920EE49EF00F17B0A /* Build configuration list for PBXNativeTarget "Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E8D010A20EE49EF00F17B0A /* Debug */,
+				6E8D010B20EE49EF00F17B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E8D010C20EE49EF00F17B0A /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E8D010D20EE49EF00F17B0A /* Debug */,
+				6E8D010E20EE49EF00F17B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E8D010F20EE49EF00F17B0A /* Build configuration list for PBXNativeTarget "CalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E8D011020EE49EF00F17B0A /* Debug */,
+				6E8D011120EE49EF00F17B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6E8D00E820EE49ED00F17B0A /* Calculator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6E8D00E920EE49ED00F17B0A /* Calculator.xcdatamodel */,
+			);
+			currentVersion = 6E8D00E920EE49ED00F17B0A /* Calculator.xcdatamodel */;
+			path = Calculator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6E8D00D620EE49ED00F17B0A /* Project object */;
+}
