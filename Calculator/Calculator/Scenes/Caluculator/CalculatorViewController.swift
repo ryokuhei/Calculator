@@ -22,11 +22,6 @@ class CalculatorViewController: UIViewController {
     // 演算子
     @IBOutlet weak var operate: UILabel!
     
-    // 単位メモ用テキスト
-    @IBOutlet weak var leftUnit: UITextField!
-    @IBOutlet weak var rightUnit: UITextField!
-    @IBOutlet weak var resultUnit: UITextField!
-    
     // 計算用インプットテキスト
     @IBOutlet weak var calculateText: UITextField!
     // 計算開始ボタン
@@ -38,9 +33,7 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.calculateText.delegate = self
-        
+
         self.setupDelegate()
         self.setupNotification()
         self.setupViewModelOutputs()
@@ -57,6 +50,7 @@ class CalculatorViewController: UIViewController {
     
     private func setupNotification() {
         
+        // キーボード開閉アニメーション *処理内容はUIViewController+Extension.swiftに記載
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
@@ -66,9 +60,9 @@ class CalculatorViewController: UIViewController {
         
         if let viewModel = self.viewModel {
             let calculateText = self.calculateText.rx.text
-            calculateText.bind(to: viewModel.inputs.calculateText).disposed(by: disposeBag)
+            calculateText.bind(to: viewModel.inputs.formula).disposed(by: disposeBag)
             let tapCalculate = self.calculateButton.rx.tap
-            tapCalculate.bind(to: viewModel.inputs.calculate).disposed(by: disposeBag)
+            tapCalculate.bind(to: viewModel.inputs.doCalculate).disposed(by: disposeBag)
         }
     }
     
@@ -81,19 +75,21 @@ class CalculatorViewController: UIViewController {
         self.viewModel?.outputs.displayToResultNumber.bind(to: self.resultNumber.rx.text).disposed(by: disposeBag)
         
         self.viewModel?.outputs.showError
-            .asDriver(onErrorJustReturn: "")
-            .drive(onNext: { errorMessage in
-                self.showError(message: errorMessage)
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { error in
+                self.showError(message: error?.getMessage())
             })
             .disposed(by: disposeBag)
     }
     
+    // 画面タップ時にキーボードが開いていたら閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
     }
     
-    func showError(message: String) {
+    // errorポップアップ表示
+    func showError(message: String? = nil) {
         KRProgressHUD.showError(withMessage: message)
     }
     
@@ -101,6 +97,7 @@ class CalculatorViewController: UIViewController {
 
 extension CalculatorViewController: UITextFieldDelegate {
     
+    // Enterでキーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.calculateText.resignFirstResponder()
         

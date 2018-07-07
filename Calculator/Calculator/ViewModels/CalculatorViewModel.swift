@@ -12,8 +12,8 @@ import RxCocoa
 
 protocol CalculatorInputs {
     
-    var calculateText: PublishSubject<String?> {get}
-    var calculate: PublishSubject<Void> {get}
+    var formula: PublishSubject<String?> {get}
+    var doCalculate: PublishSubject<Void> {get}
 }
 
 protocol CalculatorOutputs {
@@ -23,7 +23,7 @@ protocol CalculatorOutputs {
     var displayToResultNumber: Observable<String> {get}
     var displayToOperate: Observable<String> {get}
     
-    var showError: Observable<String>{get}
+    var showError: Observable<CalculationError?>{get}
 }
 
 protocol CalculatorViewModel: CalculatorInputs, CalculatorOutputs {
@@ -39,8 +39,8 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     var calculator: Calculator
     
     // 入力系オブザーバー
-    var calculateText = PublishSubject<String?>()
-    var calculate = PublishSubject<Void>()
+    var formula = PublishSubject<String?>()
+    var doCalculate = PublishSubject<Void>()
 
     // 画面表示系オブザーバー
     lazy var displayToLeftNumber: Observable<String> = {
@@ -64,7 +64,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
             .share(replay: 1)
     }()
     
-    lazy var showError: Observable<String> = {
+    lazy var showError: Observable<CalculationError?> = {
         return error
     }()
 
@@ -75,57 +75,79 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     var operate      = PublishSubject<Operator>()
     var resultNumber = PublishSubject<Float>()
     
-    var error = PublishSubject<String>()
+    var error = PublishSubject<CalculationError?>()
 
-    // 計算用
-    private lazy var calculation: Observable<Formula?> = {
-        return calculate
+    // start calculate
+    private lazy var calculate: Observable<String?> = {
+        return self.doCalculate
             .throttle(0.3, scheduler: MainScheduler.instance)
-            .withLatestFrom(calculateText) { $1 }
-            .map { [unowned self] calculate ->Formula? in
-                guard let calculate = calculate else {
-                    return nil
-                }
+            .withLatestFrom(formula) { $1 }
+    }()
 
-                return Formula(calculate)
+    // validation
+    private lazy var calculationValid: Observable<Result<Formula, CalculationError>> = {
+         return calculate
+            .map { [unowned self] formula ->Result<Formula, CalculationError> in
+                guard let formula = formula else {
+                    return Result(error: .unknownError)
+                }
+                guard let formulaEntity = Formula(formula) else {
+                    if !formula.isMatchesRegularExpression(pattern: "^([0-9])+") {
+                        return Result(error: .leftHandSideIsNotEntered)
+                        
+                    } else if !formula.isMatchesRegularExpression(pattern: "[+-/*//]([+0-9])+") {
+                        return Result(error: .rightHandSideIsNotEntered)
+                        
+                    } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+[+-/*//]([+0-9])+$") {
+                        return Result(error: .invalidValue)
+                    } else {
+                       return Result(error: .unknownError)
+                    }
+                }
+                
+                return Result(value: formulaEntity)
             }
             .share(replay: 1)
     }()
     
     let disposeBag = DisposeBag()
+    
     init(calculator: Calculator) {
         
         self.calculator = calculator
         
-        calculation.subscribe(onNext: {
-            formula in
-                guard let formula = formula else {
-                    self.error.onNext("")
-                    return
-                }
-                self.leftNumber.onNext(formula.lhs)
-                self.rightNumber.onNext(formula.rhs)
-                self.operate.onNext(formula.operate)
+        calculationValid.subscribe(onNext: { result in
             
-                var result: Float
-                switch formula.operate {
-                    case .plus:
-                        result = Float(self.calculator.addition(formula.lhs, to: formula.rhs))
-                    case .minus:
-                        result = Float(self.calculator.subtraction(formula.lhs, from: formula.rhs))
-                    case .multiplied:
-                        result = Float(self.calculator.maltiplication(formula.lhs, by: formula.rhs))
-                    case .divded:
-                        result = self.calculator.division(formula.lhs, by: formula.rhs)
+                switch result {
+                case .failure(let error):
+                    self.error.onNext(error)
+                case .success(let formula):
+                    self.leftNumber.onNext(formula.lhs)
+                    self.rightNumber.onNext(formula.rhs)
+                    self.operate.onNext(formula.operate)
+                
+                    var result: Float
+                    switch formula.operate {
+                        case .plus:
+                            result = Float(self.calculator.addition(formula.lhs, to: formula.rhs))
+                        case .minus:
+                            result = Float(self.calculator.subtraction(formula.lhs, from: formula.rhs))
+                        case .multiplied:
+                            result = Float(self.calculator.maltiplication(formula.lhs, by: formula.rhs))
+                        case .divded:
+                            result = self.calculator.division(formula.lhs, by: formula.rhs)
+                            if result.isFinite {
+                               self.error.onNext(.divideByZero)
+                            }
+                    }
+                    self.resultNumber.onNext(result)
                 }
-                self.resultNumber.onNext(result)
 
             },
             onError: { error in
-                self.error.onNext(error.localizedDescription)
+                print(error)
+                self.error.onNext(.unknownError)
             }).disposed(by: disposeBag)
         
     }
-    
-    
 }
