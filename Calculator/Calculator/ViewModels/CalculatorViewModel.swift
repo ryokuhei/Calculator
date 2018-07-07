@@ -45,25 +45,26 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     var doCalculate = PublishSubject<Void>()
     var doDisplayReset = PublishSubject<Void>()
 
+
     // 画面表示系オブザーバー
     lazy var displayToLeftNumber: Observable<String> = {
         return leftNumber
-            .map { number in
-                guard let number = number else {
+            .map { [unowned self] number in
+                guard let number = number as NSNumber? else {
                     return ""
                 }
-                return String(number)
+                return self.translateToNumberDisplayFormat(number: number)
             }
             .share(replay: 1)
     }()
     
     lazy var displayToRightNumber: Observable<String> = {
         return rightNumber
-            .map { number in
-                guard let number = number else {
+            .map { [unowned self] number in
+                guard let number = number as NSNumber? else {
                     return ""
                 }
-                return String(number)
+                return self.translateToNumberDisplayFormat(number: number)
             }
             .share(replay: 1)
     }()
@@ -81,11 +82,11 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     
     lazy var displayToResultNumber: Observable<String> = {
         return resultNumber
-            .map { number in
-                guard let number = number else {
+            .map {[unowned self] number in
+                guard let number = number as NSNumber? else {
                     return ""
                 }
-                return String(number)
+                return self.translateToNumberDisplayFormat(number: number)
             }
             .share(replay: 1)
     }()
@@ -197,5 +198,15 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
 
         }).disposed(by: disposeBag)
 
+    }
+    
+    // 表示用のフォーマットへ変換する
+    func translateToNumberDisplayFormat(number: NSNumber) ->String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+        formatter.groupingSize = 3
+        return formatter.string(from: number) ?? ""
+        
     }
 }
