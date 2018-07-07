@@ -1,21 +1,21 @@
 //
-//  CustomButton.swift
+//  KeyboardButton.swift
 //  Calculator
 //
-//  Created by ryoku on 2018/07/07.
+//  Created by ryoku on 2018/07/08.
 //  Copyright © 2018 ryokuhei_sato. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-@IBDesignable class CastomButton: UIButton {
+@IBDesignable class KeyboardButton: UIButton {
     
     // corner
-    @IBInspectable var cornerRadius: CGFloat = 10.0
+    @IBInspectable var cornerRadius: CGFloat = 3.0
     
     // border
-    @IBInspectable var borderColor: UIColor = UIColor.MyTheme.buttonBorder
+    @IBInspectable var borderColor: UIColor = UIColor.MyTheme.keyboardButtonBorder
     @IBInspectable var borderWidth: CGFloat = 1.0
     
     override func draw(_ rect: CGRect) {

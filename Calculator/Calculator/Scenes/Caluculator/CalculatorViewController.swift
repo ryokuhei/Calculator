@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 import KRProgressHUD
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController  {
     
     // 計算結果表示用ラベル
     @IBOutlet weak var leftNumber: UILabel!
@@ -37,12 +37,26 @@ class CalculatorViewController: UIViewController {
 
         self.setupDelegate()
         self.setupNotification()
+        self.setupKeyboard()
         self.setupViewModelOutputs()
         self.setupViewModelInputs()
     }
     
     func inject(viewModel: CalculatorViewModel) {
         self.viewModel = viewModel
+    }
+    
+    private func setupKeyboard() {
+        
+        let keyboard = CalculationKeyboardBuilder.build()
+        keyboard.delegate = self
+        self.calculateText.inputView = keyboard
+
+        // キーボード開閉アニメーション *処理内容はUIViewController+Extension.swiftに記載
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(customKeyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        notification.addObserver(self, selector: #selector(customKeyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
     }
     
     private func setupDelegate() {
@@ -102,9 +116,16 @@ class CalculatorViewController: UIViewController {
 extension CalculatorViewController: UITextFieldDelegate {
     
     // Enterでキーボードを閉じる
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.calculateText.resignFirstResponder()
-        
-        return true
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.calculateText.resignFirstResponder()
+//
+//        return true
+//    }
+}
+
+extension CalculatorViewController: CalculationKeyboardDelegate {
+    
+    func input(key: String) {
+        self.calculateText.text?.append(key)
     }
 }

@@ -38,10 +38,10 @@ struct R: Rswift.Validatable {
   
   /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
-    /// Nib `CalculationKeyboard`.
-    static let calculationKeyboard = _R.nib._CalculationKeyboard()
+    /// Nib `calculationKeyboard`.
+    static let calculationKeyboard = _R.nib._calculationKeyboard()
     
-    /// `UINib(name: "CalculationKeyboard", in: bundle)`
+    /// `UINib(name: "calculationKeyboard", in: bundle)`
     static func calculationKeyboard(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.calculationKeyboard)
     }
@@ -113,9 +113,9 @@ struct R: Rswift.Validatable {
 
 struct _R {
   struct nib {
-    struct _CalculationKeyboard: Rswift.NibResourceType {
+    struct _calculationKeyboard: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "CalculationKeyboard"
+      let name = "calculationKeyboard"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

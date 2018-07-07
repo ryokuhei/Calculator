@@ -13,6 +13,7 @@ extension UIColor {
     struct MyTheme {
         static var textBorder = UIColor.blue
         static var buttonBorder = UIColor.blue
+        static var keyboardButtonBorder = UIColor.black
     }
 }
 

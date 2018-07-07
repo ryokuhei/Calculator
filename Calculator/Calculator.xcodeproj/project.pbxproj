@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E15B50D20F1611D00386814 /* calculationKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E15B50C20F1611D00386814 /* calculationKeyboard.xib */; };
 		6E2DD1FF20EFB2E500F213DE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2DD1FE20EFB2E500F213DE /* R.generated.swift */; };
 		6E2DD20220EFB51100F213DE /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2DD20120EFB51100F213DE /* SplashWireframe.swift */; };
 		6E4D83E020EFA8A100C39B6A /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D83DF20EFA8A100C39B6A /* SplashBuilder.swift */; };
@@ -38,7 +39,10 @@
 		6EB07EC820F08B1500BD3363 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB07EC720F08B1500BD3363 /* Formula.swift */; };
 		6EFD3F5420F0B24A00275E1A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5320F0B24A00275E1A /* Result.swift */; };
 		6EFD3F5620F0B3DB00275E1A /* CalculationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5520F0B3DB00275E1A /* CalculationError.swift */; };
-		6EFD3F5920F0CB7100275E1A /* CalculationKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5820F0CB7100275E1A /* CalculationKeyboard.xib */; };
+		6EFD3F5F20F10BE600275E1A /* CalculationKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5E20F10BE600275E1A /* CalculationKeyboardViewModel.swift */; };
+		6EFD3F6120F119E100275E1A /* CalculationKeyboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F6020F119E100275E1A /* CalculationKeyboardBuilder.swift */; };
+		6EFD3F6320F1305300275E1A /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F6220F1305300275E1A /* KeyboardButton.swift */; };
+		6EFD3F6720F1369C00275E1A /* CalculationKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F6620F1369C00275E1A /* CalculationKeyboard.swift */; };
 		7CB4229981A63689D6F8DC9C /* Pods_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3BEDCA8DD4BD3E3BA55FC2 /* Pods_Calculator.framework */; };
 		8E116A6F2888BCD39BF72BE8 /* Pods_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2188F65F8E97D263A4659A /* Pods_CalculatorTests.framework */; };
 		C4A3FDAB1C1DBE391BEE1E10 /* Pods_CalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */; };
@@ -65,6 +69,7 @@
 		1189C2333217C2B83B67E4B7 /* Pods-CalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51F68BD74F32EF218D6F04A1 /* Pods-CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59BED3C757532EFD0918435B /* Pods-Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculator/Pods-Calculator.release.xcconfig"; sourceTree = "<group>"; };
+		6E15B50C20F1611D00386814 /* calculationKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = calculationKeyboard.xib; sourceTree = "<group>"; };
 		6E2DD1FE20EFB2E500F213DE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Calculator/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		6E2DD20120EFB51100F213DE /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
 		6E4D83DF20EFA8A100C39B6A /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
@@ -100,7 +105,10 @@
 		6EB07EC720F08B1500BD3363 /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		6EFD3F5320F0B24A00275E1A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		6EFD3F5520F0B3DB00275E1A /* CalculationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationError.swift; sourceTree = "<group>"; };
-		6EFD3F5820F0CB7100275E1A /* CalculationKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculationKeyboard.xib; sourceTree = "<group>"; };
+		6EFD3F5E20F10BE600275E1A /* CalculationKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationKeyboardViewModel.swift; sourceTree = "<group>"; };
+		6EFD3F6020F119E100275E1A /* CalculationKeyboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationKeyboardBuilder.swift; sourceTree = "<group>"; };
+		6EFD3F6220F1305300275E1A /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		6EFD3F6620F1369C00275E1A /* CalculationKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationKeyboard.swift; sourceTree = "<group>"; };
 		8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CE90B5C49E205C8A271AB4 /* Pods-CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C27454CD0F7CD7E37C7212A /* Pods-CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 			children = (
 				6E4D83DF20EFA8A100C39B6A /* SplashBuilder.swift */,
 				6E5B84B920EFE17100C18ECD /* CalculatorBuilder.swift */,
+				6EFD3F6020F119E100275E1A /* CalculationKeyboardBuilder.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -216,6 +225,7 @@
 			children = (
 				6E5282B820EFA1B50084837C /* SplashViewModel.swift */,
 				6EB07EC020EFF86E00BD3363 /* CalculatorViewModel.swift */,
+				6EFD3F5E20F10BE600275E1A /* CalculationKeyboardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -303,6 +313,7 @@
 			children = (
 				6EFD3F5720F0CAE600275E1A /* CalculationKeyboard */,
 				6EB07EBB20EFEE9000BD3363 /* CustomButton.swift */,
+				6EFD3F6220F1305300275E1A /* KeyboardButton.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -328,7 +339,8 @@
 		6EFD3F5720F0CAE600275E1A /* CalculationKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				6EFD3F5820F0CB7100275E1A /* CalculationKeyboard.xib */,
+				6EFD3F6620F1369C00275E1A /* CalculationKeyboard.swift */,
+				6E15B50C20F1611D00386814 /* calculationKeyboard.xib */,
 			);
 			path = CalculationKeyboard;
 			sourceTree = "<group>";
@@ -469,8 +481,8 @@
 				6E8D00EC20EE49EF00F17B0A /* Assets.xcassets in Resources */,
 				6E8D00E720EE49ED00F17B0A /* Main.storyboard in Resources */,
 				6E5B84B420EFD84200C18ECD /* calculator.storyboard in Resources */,
-				6EFD3F5920F0CB7100275E1A /* CalculationKeyboard.xib in Resources */,
 				6E5282B720EF98D90084837C /* splash.storyboard in Resources */,
+				6E15B50D20F1611D00386814 /* calculationKeyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,12 +605,16 @@
 			files = (
 				6EB07EC320F00AA900BD3363 /* UIViewController+Extension.swift in Sources */,
 				6E5B84B820EFE14400C18ECD /* CalculatorWireframe.swift in Sources */,
+				6EFD3F6320F1305300275E1A /* KeyboardButton.swift in Sources */,
 				6E5282B020EF90F60084837C /* Extension.swift in Sources */,
 				6E8D00E420EE49ED00F17B0A /* ViewController.swift in Sources */,
 				6EFD3F5620F0B3DB00275E1A /* CalculationError.swift in Sources */,
+				6EFD3F6720F1369C00275E1A /* CalculationKeyboard.swift in Sources */,
+				6EFD3F5F20F10BE600275E1A /* CalculationKeyboardViewModel.swift in Sources */,
 				6E4D83E020EFA8A100C39B6A /* SplashBuilder.swift in Sources */,
 				6E5282B220EF95250084837C /* RootViewController.swift in Sources */,
 				6E5B84BA20EFE17100C18ECD /* CalculatorBuilder.swift in Sources */,
+				6EFD3F6120F119E100275E1A /* CalculationKeyboardBuilder.swift in Sources */,
 				6E5B84B220EFD7C400C18ECD /* CalculatorViewController.swift in Sources */,
 				6EB07EBF20EFF09400BD3363 /* UIColor+Extension.swift in Sources */,
 				6E682C9720EE5D8E00A48842 /* Calculator.swift in Sources */,
