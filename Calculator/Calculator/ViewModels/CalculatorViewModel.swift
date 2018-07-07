@@ -14,6 +14,7 @@ protocol CalculatorInputs {
     
     var formula: PublishSubject<String?> {get}
     var doCalculate: PublishSubject<Void> {get}
+    var doDisplayReset: PublishSubject<Void> {get}
 }
 
 protocol CalculatorOutputs {
@@ -22,6 +23,7 @@ protocol CalculatorOutputs {
     var displayToRightNumber: Observable<String> {get}
     var displayToResultNumber: Observable<String> {get}
     var displayToOperate: Observable<String> {get}
+    var isHideEqual: Observable<Bool> {get}
     
     var showError: Observable<CalculationError?>{get}
 }
@@ -41,47 +43,81 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     // 入力系オブザーバー
     var formula = PublishSubject<String?>()
     var doCalculate = PublishSubject<Void>()
+    var doDisplayReset = PublishSubject<Void>()
 
     // 画面表示系オブザーバー
     lazy var displayToLeftNumber: Observable<String> = {
         return leftNumber
-            .map {String($0)}
+            .map { number in
+                guard let number = number else {
+                    return ""
+                }
+                return String(number)
+            }
             .share(replay: 1)
     }()
+    
     lazy var displayToRightNumber: Observable<String> = {
         return rightNumber
-            .map {String($0)}
+            .map { number in
+                guard let number = number else {
+                    return ""
+                }
+                return String(number)
+            }
             .share(replay: 1)
     }()
+    
     lazy var displayToOperate: Observable<String> = {
         return operate
-            .map {$0.rawValue}
+            .map { operate in
+                guard let operate = operate else {
+                    return ""
+                }
+                return operate.rawValue
+            }
             .share(replay: 1)
     }()
+    
     lazy var displayToResultNumber: Observable<String> = {
         return resultNumber
-            .map {String($0)}
+            .map { number in
+                guard let number = number else {
+                    return ""
+                }
+                return String(number)
+            }
             .share(replay: 1)
     }()
     
+    // イコールラベルの表示
+    lazy var isHideEqual: Observable<Bool> = {
+       return displayToResultNumber.map { resultNumber in
+            return resultNumber == ""
+       }
+       .share(replay: 1)
+    }()
+    // Error通知
     lazy var showError: Observable<CalculationError?> = {
         return error
+            .share(replay: 1)
     }()
-
     
     // 通知用
-    var leftNumber   = PublishSubject<Int>()
-    var rightNumber  = PublishSubject<Int>()
-    var operate      = PublishSubject<Operator>()
-    var resultNumber = PublishSubject<Float>()
+    var leftNumber   = PublishSubject<Int?>()
+    var rightNumber  = PublishSubject<Int?>()
+    var operate      = PublishSubject<Operator?>()
+    var resultNumber = PublishSubject<Float?>()
     
-    var error = PublishSubject<CalculationError?>()
-
+    // error
+    private var error = PublishSubject<CalculationError?>()
+    
     // start calculate
     private lazy var calculate: Observable<String?> = {
         return self.doCalculate
             .throttle(0.3, scheduler: MainScheduler.instance)
             .withLatestFrom(formula) { $1 }
+            .share(replay: 1)
     }()
 
     // validation
@@ -115,7 +151,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     init(calculator: Calculator) {
         
         self.calculator = calculator
-        
+        // 検証した結果によって計算を行う
         calculationValid.subscribe(onNext: { result in
             
                 switch result {
@@ -136,11 +172,14 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                             result = Float(self.calculator.maltiplication(formula.lhs, by: formula.rhs))
                         case .divded:
                             result = self.calculator.division(formula.lhs, by: formula.rhs)
-                            if result.isFinite {
-                               self.error.onNext(.divideByZero)
-                            }
                     }
-                    self.resultNumber.onNext(result)
+                    
+                    if !result.isFinite {
+                        self.error.onNext(.divideByZero)
+                        self.resultNumber.onNext(nil)
+                    } else {
+                        self.resultNumber.onNext(result)
+                    }
                 }
 
             },
@@ -149,5 +188,14 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                 self.error.onNext(.unknownError)
             }).disposed(by: disposeBag)
         
+        // 表示をリセット
+        doDisplayReset.subscribe(onNext:{
+            self.leftNumber.onNext(nil)
+            self.rightNumber.onNext(nil)
+            self.operate.onNext(nil)
+            self.resultNumber.onNext(nil)
+
+        }).disposed(by: disposeBag)
+
     }
 }

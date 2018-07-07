@@ -38,6 +38,7 @@
 		6EB07EC820F08B1500BD3363 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB07EC720F08B1500BD3363 /* Formula.swift */; };
 		6EFD3F5420F0B24A00275E1A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5320F0B24A00275E1A /* Result.swift */; };
 		6EFD3F5620F0B3DB00275E1A /* CalculationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5520F0B3DB00275E1A /* CalculationError.swift */; };
+		6EFD3F5920F0CB7100275E1A /* CalculationKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EFD3F5820F0CB7100275E1A /* CalculationKeyboard.xib */; };
 		7CB4229981A63689D6F8DC9C /* Pods_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3BEDCA8DD4BD3E3BA55FC2 /* Pods_Calculator.framework */; };
 		8E116A6F2888BCD39BF72BE8 /* Pods_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2188F65F8E97D263A4659A /* Pods_CalculatorTests.framework */; };
 		C4A3FDAB1C1DBE391BEE1E10 /* Pods_CalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */; };
@@ -99,6 +100,7 @@
 		6EB07EC720F08B1500BD3363 /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		6EFD3F5320F0B24A00275E1A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		6EFD3F5520F0B3DB00275E1A /* CalculationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationError.swift; sourceTree = "<group>"; };
+		6EFD3F5820F0CB7100275E1A /* CalculationKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculationKeyboard.xib; sourceTree = "<group>"; };
 		8508B6DC955604C990E0159D /* Pods_CalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CE90B5C49E205C8A271AB4 /* Pods-CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C27454CD0F7CD7E37C7212A /* Pods-CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculatorUITests/Pods-CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		6EB07EBA20EFEE7500BD3363 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
+				6EFD3F5720F0CAE600275E1A /* CalculationKeyboard */,
 				6EB07EBB20EFEE9000BD3363 /* CustomButton.swift */,
 			);
 			path = Parts;
@@ -320,6 +323,14 @@
 				6EFD3F5320F0B24A00275E1A /* Result.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		6EFD3F5720F0CAE600275E1A /* CalculationKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6EFD3F5820F0CB7100275E1A /* CalculationKeyboard.xib */,
+			);
+			path = CalculationKeyboard;
 			sourceTree = "<group>";
 		};
 		BB497A91BC36A53208FF675E /* Frameworks */ = {
@@ -458,6 +469,7 @@
 				6E8D00EC20EE49EF00F17B0A /* Assets.xcassets in Resources */,
 				6E8D00E720EE49ED00F17B0A /* Main.storyboard in Resources */,
 				6E5B84B420EFD84200C18ECD /* calculator.storyboard in Resources */,
+				6EFD3F5920F0CB7100275E1A /* CalculationKeyboard.xib in Resources */,
 				6E5282B720EF98D90084837C /* splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

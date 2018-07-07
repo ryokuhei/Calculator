@@ -55,7 +55,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00w-bF-BFf">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00w-bF-BFf">
                                 <rect key="frame" x="57" y="182.66666666666666" width="35" height="57.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="F3L-dM-yLa"/>
@@ -110,6 +110,7 @@
                     <connections>
                         <outlet property="calculateButton" destination="BLE-J5-x7V" id="1ZT-fn-nEH"/>
                         <outlet property="calculateText" destination="lyu-Cw-7e5" id="gJp-wq-Qi3"/>
+                        <outlet property="equal" destination="00w-bF-BFf" id="yf7-0E-Vc5"/>
                         <outlet property="leftNumber" destination="WkD-I7-oEJ" id="K80-Pw-tON"/>
                         <outlet property="operate" destination="M9d-Pl-FTT" id="yDf-gk-SGl"/>
                         <outlet property="resultNumber" destination="o2E-8A-IDU" id="6Au-aM-q3k"/>

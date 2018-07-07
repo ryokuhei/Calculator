@@ -18,6 +18,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var leftNumber: UILabel!
     @IBOutlet weak var rightNumber: UILabel!
     @IBOutlet weak var resultNumber: UILabel!
+    @IBOutlet weak var equal: UILabel!
     
     // 演算子
     @IBOutlet weak var operate: UILabel!
@@ -74,6 +75,8 @@ class CalculatorViewController: UIViewController {
         self.viewModel?.outputs.displayToOperate.bind(to: self.operate.rx.text).disposed(by: disposeBag)
         self.viewModel?.outputs.displayToResultNumber.bind(to: self.resultNumber.rx.text).disposed(by: disposeBag)
         
+        self.viewModel?.outputs.isHideEqual.bind(to: self.equal.rx.isHidden).disposed(by: disposeBag)
+        
         self.viewModel?.outputs.showError
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { error in
@@ -90,6 +93,7 @@ class CalculatorViewController: UIViewController {
     
     // errorポップアップ表示
     func showError(message: String? = nil) {
+        self.viewModel?.inputs.doDisplayReset.onNext(())
         KRProgressHUD.showError(withMessage: message)
     }
     
