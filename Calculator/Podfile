@@ -8,6 +8,7 @@ target 'Calculator' do
   # Pods for Calculator
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
+    pod 'KRProgressHUD', '~> 3.2.2'
     pod 'R.swift'
 
   target 'CalculatorTests' do

@@ -51,12 +51,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `calculator`.
+    static let calculator = _R.storyboard.calculator()
     /// Storyboard `splash`.
     static let splash = _R.storyboard.splash()
     
@@ -68,6 +70,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    
+    /// `UIStoryboard(name: "calculator", bundle: ...)`
+    static func calculator(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.calculator)
     }
     
     /// `UIStoryboard(name: "splash", bundle: ...)`
@@ -102,6 +109,15 @@ struct _R {
   }
   
   struct storyboard {
+    struct calculator: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = CalculatorViewController
+      
+      let bundle = R.hostingBundle
+      let name = "calculator"
+      
+      fileprivate init() {}
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       

@@ -11,7 +11,7 @@ import Foundation
 struct SplashWireframe {
     
     func showStartViewController(completion: (() ->Void)? = nil) {
-        let vc = R.storyboard.main.instantiateInitialViewController()
+        let vc = CalculatorBuilder.build()
         AppDelegate.shared.rootViewController.current = vc
         completion?()
     }
