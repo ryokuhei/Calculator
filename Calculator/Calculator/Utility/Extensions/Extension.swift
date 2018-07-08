@@ -9,35 +9,35 @@
 import Foundation
 
 
-public struct Extension<Base> {
-    
-    let base: Base
-    
-    init(_ base: Base) {
-        
-        self.base = base
-    }
-}
-
-protocol ExtensionCompatible {
-    
-    associatedtype CompatibleType
-    
-    static var ex: Extension<CompatibleType>.Type {get}
-    var ex: Extension<CompatibleType> {get}
-    
-}
-
-extension ExtensionCompatible {
-    
-    public static var ex: Extension<Self>.Type {
-        return Extension<Self>.self
-    }
-    
-    public var ex: Extension<Self> {
-        return Extension(self)
-    }
-}
+//public struct Extension<Base> {
+//
+//    let base: Base
+//
+//    init(_ base: Base) {
+//
+//        self.base = base
+//    }
+//}
+//
+//protocol ExtensionCompatible {
+//
+//    associatedtype CompatibleType
+//
+//    static var ex: Extension<CompatibleType>.Type {get}
+//    var ex: Extension<CompatibleType> {get}
+//
+//}
+//
+//extension ExtensionCompatible {
+//
+//    public static var ex: Extension<Self>.Type {
+//        return Extension<Self>.self
+//    }
+//
+//    public var ex: Extension<Self> {
+//        return Extension(self)
+//    }
+//}
 
 extension String {
     
@@ -59,9 +59,7 @@ extension String {
 
 extension Float {
     func trancrationOfDecimalPlace(numberOf decimalPlace: Int) ->Float {
-        let test = pow(10, decimalPlace).hashValue
-        print(test)
-        
+
         var decimalPoint = 10
         for _ in 1...decimalPlace {
             decimalPoint = decimalPoint * 10

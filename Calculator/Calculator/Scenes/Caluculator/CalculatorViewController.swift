@@ -78,7 +78,8 @@ class CalculatorViewController: UIViewController  {
             let calculateText = self.calculateText.rx.text
             calculateText.bind(to: viewModel.inputs.formula).disposed(by: disposeBag)
             let tapCalculate = self.calculateButton.rx.tap
-            tapCalculate.bind(to: viewModel.inputs.doCalculate).disposed(by: disposeBag)
+            tapCalculate.do(onNext: {_ in self.view.endEditing(true)})
+                .bind(to: viewModel.inputs.doCalculate).disposed(by: disposeBag)
         }
     }
     

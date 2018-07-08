@@ -34,7 +34,6 @@ extension UIViewController {
     @objc func customKeyboardWillShow(notification: Notification?) {
         let rect = UIScreen.main.bounds
         let duration: TimeInterval = (notification?.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? Double) ?? 0.0
-       print("notification")
         UIView.animate(withDuration: duration, animations: {
             let transform = CGAffineTransform(translationX: 0, y: -(rect.size.height / 3 ))
             self.view.transform = transform
