@@ -35,6 +35,7 @@ class CalculatorViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupView()
         self.setupDelegate()
         self.setupNotification()
         self.setupKeyboard()
@@ -44,6 +45,20 @@ class CalculatorViewController: UIViewController  {
     
     func inject(viewModel: CalculatorViewModel) {
         self.viewModel = viewModel
+    }
+    
+    private func setupView() {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setImage(UIImage(named: "clear_2"), for: .normal)
+        clearButton.setImage(UIImage(named: "clear_1"), for: .highlighted)
+        clearButton.addTarget(self, action: #selector(self.clearFormulaTextView), for: .touchUpInside)
+        
+        self.calculateText.addSubview(clearButton)
+        self.calculateText.clearButtonMode = .always
+        
+    }
+    @objc private func clearFormulaTextView() {
+        self.calculateText.text?.removeAll()
     }
     
     private func setupKeyboard() {
