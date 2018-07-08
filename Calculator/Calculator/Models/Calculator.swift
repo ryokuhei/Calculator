@@ -20,18 +20,22 @@ struct CalculatorImpl: Calculator {
     init() {
     }
     
+    // 足し算
     func addition(_ lhs: Int, to rhs: Int) ->Int {
         return lhs + rhs
     }
     
+    // 引き算
     func subtraction(_ lhs: Int, from rhs: Int) ->Int {
         return lhs - rhs
     }
     
+    // 掛け算
     func maltiplication(_ lhs: Int, by rhs: Int) ->Int {
         return lhs * rhs
     }
     
+    // わり算
     func division(_ lhs: Int, by rhs: Int) ->Float {
         return Float(lhs) / Float(rhs)
     }

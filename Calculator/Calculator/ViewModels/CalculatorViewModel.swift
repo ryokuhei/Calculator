@@ -141,6 +141,9 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                        return Result(error: .unknownError)
                     }
                 }
+                if formulaEntity.lhs >= 100000000 || formulaEntity.rhs >= 100000000 {
+                    return Result(error: .inputValueToLarge )
+                }
                 
                 return Result(value: formulaEntity)
             }
@@ -178,7 +181,11 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                     if !result.isFinite {
                         self.error.onNext(.divideByZero)
                         self.resultNumber.onNext(nil)
+                    } else if result >= 1000000000000000 {
+                        self.error.onNext(.resultValueToLarge)
+                        self.resultNumber.onNext(nil)
                     } else {
+                        // 結果を通知
                         self.resultNumber.onNext(result)
                     }
                 }

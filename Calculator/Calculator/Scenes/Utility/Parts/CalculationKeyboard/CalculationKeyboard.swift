@@ -29,6 +29,8 @@ class CalculationKeyboard: UIView {
     @IBOutlet weak var multiplied: UIButton!
     @IBOutlet weak var divided: UIButton!
     
+    @IBOutlet weak var back: KeyboardButton!
+    
     var delegate: CalculationKeyboardDelegate?
     var viewModel: CalculationKeyboardViewModel?
     var toolbar: UIToolbar?
@@ -147,7 +149,12 @@ class CalculationKeyboard: UIView {
             let tapDivided = self.divided.rx.tap
             tapDivided.bind(to: viewModel.inputs.tapDivided)
                 .disposed(by: disposeBag)
+            
+            let tapBack = self.back.rx.tap
+            tapBack.bind(to: viewModel.inputs.tapBack)
+                .disposed(by: disposeBag)
         }
+        
     }
     
     private func setupViewModelOutputs() {
@@ -169,6 +176,12 @@ class CalculationKeyboard: UIView {
             .drive(onNext: {[unowned self] in
                 self.delegate?.clear()
             }).disposed(by: disposeBag)
+        
+        self.viewModel?.outputs.back
+            .asDriver(onErrorDriveWith: Driver.empty())
+            .drive(onNext: {[unowned self] in
+                self.delegate?.back()
+            }).disposed(by: disposeBag)
     }
     
     @objc private func tapDoneButton() {
@@ -185,4 +198,5 @@ protocol CalculationKeyboardDelegate {
     func input(key: String)
     func clear()
     func done()
+    func back()
 }

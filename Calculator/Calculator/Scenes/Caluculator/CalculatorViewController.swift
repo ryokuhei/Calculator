@@ -139,4 +139,11 @@ extension CalculatorViewController: CalculationKeyboardDelegate {
         self.view.endEditing(true)
         self.viewModel?.inputs.doCalculate.onNext(())
     }
+    
+    func back() {
+        if let text = self.calculateText.text,
+               text.count >= 1 {
+            self.calculateText.text?.removeLast()
+        }
+    }
 }

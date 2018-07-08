@@ -41,14 +41,14 @@ class CalculatorTests: XCTestCase {
     }
     
     func testDivision() {
-//        let result = calculator.division(2, by: 10)
-//        XCTAssertEqual(result, 0.2)
-//        let result2 = calculator.division(10, by: 2)
-//        XCTAssertEqual(result2, 5)
+        let result = calculator.division(2, by: 10)
+        XCTAssertEqual(result, 0.2)
+        let result2 = calculator.division(10, by: 2)
+        XCTAssertEqual(result2, 5.0)
 //        let result3 = calculator.division(10, by: 3)
 //        XCTAssertEqual(result3, 3.33333)
-//        let result4 = calculator.division(10, by: 0)
-//        XCTAssertTrue(result4.isInfinite)
+        let result4 = calculator.division(10, by: 0)
+        XCTAssertTrue(!result4.isFinite)
     }
 
 }

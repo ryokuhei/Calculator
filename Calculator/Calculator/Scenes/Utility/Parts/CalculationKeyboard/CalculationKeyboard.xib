@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculationKeyboard" customModule="Calculator" customModuleProvider="target">
             <connections>
+                <outlet property="back" destination="8us-X5-dQT" id="eCh-Uc-RIU"/>
                 <outlet property="divided" destination="YiI-HR-Sja" id="jOh-Q7-dP8"/>
                 <outlet property="eight" destination="grG-qU-OCr" id="w04-JZ-RgB"/>
                 <outlet property="five" destination="FmM-yP-8xy" id="F0u-5k-zPu"/>
@@ -117,7 +118,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bnY-7y-3NS">
-                            <rect key="frame" x="146.5" y="0.0" width="63.5" height="194"/>
+                            <rect key="frame" x="146.5" y="0.0" width="63.5" height="262"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CP7-hC-cZY" customClass="KeyboardButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="63.5" height="58"/>
@@ -145,6 +146,16 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                     <size key="titleShadowOffset" width="1" height="1"/>
                                     <state key="normal" title="3">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8us-X5-dQT" customClass="KeyboardButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="204" width="63.5" height="58"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="B">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
