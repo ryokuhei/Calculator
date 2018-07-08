@@ -25,10 +25,15 @@ protocol CalculationKeyboardInputs {
     var tapMinus: PublishSubject<Void> {get}
     var tapMultipled: PublishSubject<Void> {get}
     var tapDivided: PublishSubject<Void> {get}
+    
+    var tapDone: PublishSubject<Void> {get}
+    var tapClear: PublishSubject<Void> {get}
 }
 
 protocol CalculationKeyboardOutputs {
     var inputToTarget: Observable<String> {get}
+    var done:Observable<Void> {get}
+    var clear:Observable<Void> {get}
 }
 
 protocol CalculationKeyboardViewModel {
@@ -56,6 +61,10 @@ class CalculationKeyboardViewModelImpl: CalculationKeyboardViewModel, Calculatio
     var tapMultipled = PublishSubject<Void>()
     var tapDivided   = PublishSubject<Void>()
     
+    // toolbar
+    var tapDone  = PublishSubject<Void>()
+    var tapClear = PublishSubject<Void>()
+    
     // タップされた値を通知する
     lazy var inputToTarget: Observable<String> = {
         return Observable.of(zero,
@@ -76,48 +85,55 @@ class CalculationKeyboardViewModelImpl: CalculationKeyboardViewModel, Calculatio
             .merge()
             .share(replay: 1)
     }()
+    lazy var done: Observable<Void> = {
+        return tapDone.share(replay: 1)
+    }()
+    lazy var clear: Observable<Void> = {
+        return tapClear.share(replay: 1)
+    }()
     
     // タップしたボタンの値に変換
-    lazy var zero: Observable<String> = {
+    private lazy var zero: Observable<String> = {
         return tapZero.map {"0"}.share(replay: 1)
     }()
-    lazy var one: Observable<String> = {
+    private lazy var one: Observable<String> = {
         return tapOne.map {"1"}.share(replay: 1)
     }()
-    lazy var two: Observable<String> = {
+    private lazy var two: Observable<String> = {
         return tapTwo.map {"2"}.share(replay: 1)
     }()
-    lazy var three: Observable<String> = {
+    private lazy var three: Observable<String> = {
         return tapThree.map {"3"}.share(replay: 1)
     }()
-    lazy var four: Observable<String> = {
+    private lazy var four: Observable<String> = {
         return tapFour.map {"4"}.share(replay: 1)
     }()
-    lazy var five: Observable<String> = {
+    private lazy var five: Observable<String> = {
         return tapFive.map {"5"}.share(replay: 1)
     }()
-    lazy var six: Observable<String> = {
+    private lazy var six: Observable<String> = {
         return tapSix.map {"6"}.share(replay: 1)
     }()
-    lazy var seven: Observable<String> = {
+    private lazy var seven: Observable<String> = {
         return tapSeven.map {"7"}.share(replay: 1)
     }()
-    lazy var eight: Observable<String> = {
+    private lazy var eight: Observable<String> = {
         return tapEight.map {"8"}.share(replay: 1)
     }()
-    lazy var nine: Observable<String> = {
+    private lazy var nine: Observable<String> = {
         return tapNine.map {"9"}.share(replay: 1)
     }()
-    lazy var plus: Observable<String> = {
+    private lazy var plus: Observable<String> = {
         return tapPlus.map {Operator.plus.rawValue}.share(replay: 1)
     }()
-    lazy var minus: Observable<String> = {
+    private lazy var minus: Observable<String> = {
         return tapMinus.map {Operator.minus.rawValue}.share(replay: 1)
     }()
-    lazy var multipled: Observable<String> = {
+    private lazy var multipled: Observable<String> = {
         return tapMultipled.map {Operator.multiplied.rawValue}.share(replay: 1)
     }()
-    lazy var divided: Observable<String> = {
+    private lazy var divided: Observable<String> = {
         return tapDivided.map {Operator.divded.rawValue}.share(replay: 1)
     }()
+
 }

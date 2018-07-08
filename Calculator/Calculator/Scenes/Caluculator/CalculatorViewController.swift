@@ -51,6 +51,7 @@ class CalculatorViewController: UIViewController  {
         let keyboard = CalculationKeyboardBuilder.build()
         keyboard.delegate = self
         self.calculateText.inputView = keyboard
+        self.calculateText.inputAccessoryView = keyboard.toolbar
 
         // キーボード開閉アニメーション *処理内容はUIViewController+Extension.swiftに記載
         let notification = NotificationCenter.default
@@ -124,8 +125,17 @@ extension CalculatorViewController: UITextFieldDelegate {
 }
 
 extension CalculatorViewController: CalculationKeyboardDelegate {
-    
+
     func input(key: String) {
         self.calculateText.text?.append(key)
+    }
+    
+    func clear() {
+        self.calculateText.text = ""
+    }
+    
+    func done() {
+        self.view.endEditing(true)
+        self.viewModel?.inputs.doCalculate.onNext(())
     }
 }

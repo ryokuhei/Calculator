@@ -16,6 +16,7 @@ enum CalculationError: Error {
     case invalidValue
     case leftHandSideIsNotEntered
     case rightHandSideIsNotEntered
+    case highNumberOfTerms
     case unknownError
     
     func getMessage() -> String {
@@ -32,6 +33,8 @@ enum CalculationError: Error {
             return "左辺が入力されていません。"
         case .rightHandSideIsNotEntered:
             return "右辺が入力されていません。"
+        case .highNumberOfTerms:
+            return "このアプリは2項での計算のみ対応しています。"
         case .unknownError:
             return "原因不明のエラーが検出されました。"
         }

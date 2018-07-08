@@ -31,6 +31,7 @@ class CalculationKeyboard: UIView {
     
     var delegate: CalculationKeyboardDelegate?
     var viewModel: CalculationKeyboardViewModel?
+    var toolbar: UIToolbar?
     
     let disposeBag = DisposeBag()
     
@@ -43,6 +44,7 @@ class CalculationKeyboard: UIView {
         
         self.viewModel = viewModel
         self.setupView()
+        self.setupToolBar()
 
         self.setupViewModelOutputs()
         self.setupViewModelInputs()
@@ -52,6 +54,7 @@ class CalculationKeyboard: UIView {
         super.init(coder: aDecoder)
 
         self.setupView()
+        self.setupToolBar()
         self.setupViewModelOutputs()
         self.setupViewModelInputs()
     }
@@ -73,6 +76,18 @@ class CalculationKeyboard: UIView {
             metrics: nil,
             views: bindings))
     }
+    
+    private func setupToolBar() {
+        self.toolbar = UIToolbar()
+        self.toolbar?.barStyle = .default
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.tapDoneButton))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(self.tapClearButton))
+        self.toolbar?.setItems([clearButton, spaceButton, doneButton], animated: false)
+        self.toolbar?.isUserInteractionEnabled = true
+        self.toolbar?.sizeToFit()
+    }
+    
     
     private func setupViewModelInputs() {
         if let viewModel = self.viewModel {
@@ -142,10 +157,32 @@ class CalculationKeyboard: UIView {
             .drive(onNext: {[unowned self] key in
                 self.delegate?.input(key: key)
             }).disposed(by: disposeBag)
+        
+        self.viewModel?.outputs.done
+            .asDriver(onErrorDriveWith: Driver.empty())
+            .drive(onNext: {[unowned self] in
+                self.delegate?.done()
+            }).disposed(by: disposeBag)
+        
+        self.viewModel?.outputs.clear
+            .asDriver(onErrorDriveWith: Driver.empty())
+            .drive(onNext: {[unowned self] in
+                self.delegate?.clear()
+            }).disposed(by: disposeBag)
+    }
+    
+    @objc private func tapDoneButton() {
+        self.viewModel?.inputs.tapDone.onNext(())
+    }
+    
+    @objc private func tapClearButton() {
+        self.viewModel?.inputs.tapClear.onNext(())
     }
     
 }
 
 protocol CalculationKeyboardDelegate {
     func input(key: String)
+    func clear()
+    func done()
 }

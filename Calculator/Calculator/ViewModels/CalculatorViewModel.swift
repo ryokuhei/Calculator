@@ -129,13 +129,13 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                     return Result(error: .unknownError)
                 }
                 guard let formulaEntity = Formula(formula) else {
-                    if !formula.isMatchesRegularExpression(pattern: "^([0-9])+") {
+                    if formula.isMatchesRegularExpression(pattern: "[0-9]+[^0-9]+[0-9]+[^0-9]+[+0-9]") {
+                        return Result(error: .highNumberOfTerms)
+                    } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+") {
                         return Result(error: .leftHandSideIsNotEntered)
-                        
-                    } else if !formula.isMatchesRegularExpression(pattern: "[+-/*//]([+0-9])+") {
+                    } else if !formula.isMatchesRegularExpression(pattern: "[+-/×÷/*//]([+0-9])+") {
                         return Result(error: .rightHandSideIsNotEntered)
-                        
-                    } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+[+-/*//]([+0-9])+$") {
+                    } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+[+-/×÷/*//]([+0-9])+$") {
                         return Result(error: .invalidValue)
                     } else {
                        return Result(error: .unknownError)

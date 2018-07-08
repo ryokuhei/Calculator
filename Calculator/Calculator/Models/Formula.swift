@@ -29,9 +29,15 @@ struct Formula {
         } else if formula.contains("*") {
             operate = .multiplied
             components = formula.components(separatedBy: "*")
+        } else if formula.contains("×") {
+            operate = .multiplied
+            components = formula.components(separatedBy: "×")
         } else if formula.contains("/") {
             operate = .divded
             components = formula.components(separatedBy: "/")
+        } else if formula.contains("÷") {
+            operate = .divded
+            components = formula.components(separatedBy: "÷")
         } else {
             return nil
         }

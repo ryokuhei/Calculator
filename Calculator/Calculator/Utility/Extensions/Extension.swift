@@ -42,7 +42,8 @@ extension ExtensionCompatible {
 extension String {
     
     func isFormula() ->Bool {
-        let pattern = "^([0-9])+[+-/*//]([+0-9])+$"
+//        let pattern = "^([0-9])+[+-/*//]([+0-9])+$"
+        let pattern = "^([0-9])+[+-/×÷/*//]([+0-9])+$"
         guard let regex = try? NSRegularExpression(pattern: pattern) else { return false }
         let matches = regex.matches(in: self, options: [], range: NSMakeRange(0, self.count))
         return matches.count > 0
@@ -53,6 +54,7 @@ extension String {
         let matches = regex.matches(in: self, options: [], range: NSMakeRange(0, self.count))
         return matches.count > 0
     }
+    
 }
 
 extension Float {
