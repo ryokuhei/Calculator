@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G59-UA-q4d" customClass="CastomView" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="60" width="374" height="386"/>
+                                <color key="backgroundColor" red="0.93789657360406087" green="0.91776951709737409" blue="0.79584707729788873" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyu-Cw-7e5">
                                 <rect key="frame" x="30" y="476" width="269" height="42"/>
                                 <constraints>
@@ -29,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkD-I7-oEJ">
-                                <rect key="frame" x="20" y="124.66666666666667" width="162" height="0.0"/>
+                                <rect key="frame" x="20" y="150.66666666666666" width="162" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="150" id="5q6-j0-iwK"/>
                                 </constraints>
@@ -38,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9d-Pl-FTT">
-                                <rect key="frame" x="192" y="124" width="30" height="0.0"/>
+                                <rect key="frame" x="192" y="150" width="30" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="dW1-d5-MxU"/>
                                 </constraints>
@@ -47,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfo-oO-EBv">
-                                <rect key="frame" x="232" y="124.66666666666667" width="162" height="0.0"/>
+                                <rect key="frame" x="232" y="150.66666666666666" width="162" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="150" id="2gE-Mz-lLW"/>
                                 </constraints>
@@ -56,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00w-bF-BFf">
-                                <rect key="frame" x="57" y="182.66666666666666" width="35" height="57.333333333333343"/>
+                                <rect key="frame" x="57" y="181.66666666666666" width="35" height="57.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="F3L-dM-yLa"/>
                                 </constraints>
@@ -65,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2E-8A-IDU">
-                                <rect key="frame" x="102" y="211" width="300" height="0.0"/>
+                                <rect key="frame" x="102" y="210" width="300" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Rui-rG-IDt"/>
                                 </constraints>
@@ -89,20 +93,24 @@
                             <constraint firstItem="dfo-oO-EBv" firstAttribute="centerY" secondItem="WkD-I7-oEJ" secondAttribute="centerY" id="98p-PJ-Nee"/>
                             <constraint firstItem="M9d-Pl-FTT" firstAttribute="centerY" secondItem="WkD-I7-oEJ" secondAttribute="centerY" id="Chr-nU-Nvl"/>
                             <constraint firstItem="Aac-aC-OMb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o2E-8A-IDU" secondAttribute="trailing" priority="750" constant="20" id="GyR-kd-Qgx"/>
-                            <constraint firstItem="M9d-Pl-FTT" firstAttribute="top" secondItem="Aac-aC-OMb" secondAttribute="top" constant="104" id="IJ8-aY-9zT"/>
+                            <constraint firstItem="M9d-Pl-FTT" firstAttribute="top" secondItem="Aac-aC-OMb" secondAttribute="top" constant="130" id="IJ8-aY-9zT"/>
                             <constraint firstItem="BLE-J5-x7V" firstAttribute="top" secondItem="lyu-Cw-7e5" secondAttribute="top" id="KdB-CG-4ih"/>
                             <constraint firstItem="BLE-J5-x7V" firstAttribute="bottom" secondItem="lyu-Cw-7e5" secondAttribute="bottom" id="LOh-nG-QtR"/>
+                            <constraint firstItem="G59-UA-q4d" firstAttribute="top" secondItem="Aac-aC-OMb" secondAttribute="top" constant="40" id="MND-pW-dBo"/>
                             <constraint firstItem="o2E-8A-IDU" firstAttribute="centerY" secondItem="00w-bF-BFf" secondAttribute="centerY" id="N5H-FB-ai6"/>
+                            <constraint firstItem="lyu-Cw-7e5" firstAttribute="top" secondItem="G59-UA-q4d" secondAttribute="bottom" constant="30" id="ONz-HL-Fyw"/>
                             <constraint firstItem="o2E-8A-IDU" firstAttribute="centerX" secondItem="QNh-vn-Paj" secondAttribute="centerX" constant="45" id="S0H-nd-omE"/>
                             <constraint firstItem="dfo-oO-EBv" firstAttribute="leading" secondItem="M9d-Pl-FTT" secondAttribute="trailing" constant="10" id="axZ-sh-4nr"/>
                             <constraint firstItem="Aac-aC-OMb" firstAttribute="bottom" secondItem="lyu-Cw-7e5" secondAttribute="bottom" constant="218" id="bcI-z3-igI"/>
                             <constraint firstItem="Aac-aC-OMb" firstAttribute="trailing" secondItem="dfo-oO-EBv" secondAttribute="trailing" constant="20" id="iQE-fH-kP8"/>
-                            <constraint firstItem="o2E-8A-IDU" firstAttribute="top" secondItem="M9d-Pl-FTT" secondAttribute="bottom" constant="87" id="mLu-zs-kJo"/>
+                            <constraint firstItem="G59-UA-q4d" firstAttribute="leading" secondItem="Aac-aC-OMb" secondAttribute="leading" constant="20" id="jtx-uu-DfE"/>
+                            <constraint firstItem="o2E-8A-IDU" firstAttribute="top" secondItem="M9d-Pl-FTT" secondAttribute="bottom" constant="60" id="mLu-zs-kJo"/>
                             <constraint firstItem="M9d-Pl-FTT" firstAttribute="leading" secondItem="WkD-I7-oEJ" secondAttribute="trailing" constant="10" id="rZ8-Gq-rpn"/>
                             <constraint firstItem="WkD-I7-oEJ" firstAttribute="leading" secondItem="Aac-aC-OMb" secondAttribute="leading" constant="20" id="sHv-Ya-SK7"/>
                             <constraint firstItem="M9d-Pl-FTT" firstAttribute="centerX" secondItem="QNh-vn-Paj" secondAttribute="centerX" id="vLb-eQ-uUQ"/>
                             <constraint firstItem="Aac-aC-OMb" firstAttribute="trailing" secondItem="BLE-J5-x7V" secondAttribute="trailing" constant="25" id="vcp-kc-CoO"/>
                             <constraint firstItem="BLE-J5-x7V" firstAttribute="leading" secondItem="lyu-Cw-7e5" secondAttribute="trailing" constant="10" id="wST-Zb-Bfv"/>
+                            <constraint firstItem="Aac-aC-OMb" firstAttribute="trailing" secondItem="G59-UA-q4d" secondAttribute="trailing" constant="20" id="x67-aa-xK9"/>
                             <constraint firstItem="lyu-Cw-7e5" firstAttribute="leading" secondItem="Aac-aC-OMb" secondAttribute="leading" constant="30" id="ygG-w7-rJS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aac-aC-OMb"/>
@@ -119,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yC2-Om-4Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="58.920539730134934"/>
+            <point key="canvasLocation" x="82.608695652173921" y="58.695652173913047"/>
         </scene>
     </scenes>
 </document>

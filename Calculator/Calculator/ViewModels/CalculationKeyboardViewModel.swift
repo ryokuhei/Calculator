@@ -94,46 +94,88 @@ class CalculationKeyboardViewModelImpl: CalculationKeyboardViewModel, Calculatio
     
     // タップしたボタンの値に変換
     private lazy var zero: Observable<String> = {
-        return tapZero.map {"0"}.share(replay: 1)
+        return tapZero
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"0"}
+            .share(replay: 1)
     }()
     private lazy var one: Observable<String> = {
-        return tapOne.map {"1"}.share(replay: 1)
+        return tapOne
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"1"}
+            .share(replay: 1)
     }()
     private lazy var two: Observable<String> = {
-        return tapTwo.map {"2"}.share(replay: 1)
+        return tapTwo
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"2"}
+            .share(replay: 1)
     }()
     private lazy var three: Observable<String> = {
-        return tapThree.map {"3"}.share(replay: 1)
+        return tapThree
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"3"}
+            .share(replay: 1)
     }()
     private lazy var four: Observable<String> = {
-        return tapFour.map {"4"}.share(replay: 1)
+        return tapFour
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"4"}
+            .share(replay: 1)
     }()
     private lazy var five: Observable<String> = {
-        return tapFive.map {"5"}.share(replay: 1)
+        return tapFive
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"5"}
+            .share(replay: 1)
     }()
     private lazy var six: Observable<String> = {
-        return tapSix.map {"6"}.share(replay: 1)
+        return tapSix
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"6"}
+            .share(replay: 1)
     }()
     private lazy var seven: Observable<String> = {
-        return tapSeven.map {"7"}.share(replay: 1)
+        return tapSeven
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"7"}
+            .share(replay: 1)
     }()
     private lazy var eight: Observable<String> = {
-        return tapEight.map {"8"}.share(replay: 1)
+        return tapEight
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"8"}
+            .share(replay: 1)
     }()
     private lazy var nine: Observable<String> = {
-        return tapNine.map {"9"}.share(replay: 1)
+        return tapNine
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {"9"}
+            .share(replay: 1)
     }()
     private lazy var plus: Observable<String> = {
-        return tapPlus.map {Operator.plus.rawValue}.share(replay: 1)
+        return tapPlus
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {Operator.plus.rawValue}
+            .share(replay: 1)
     }()
     private lazy var minus: Observable<String> = {
-        return tapMinus.map {Operator.minus.rawValue}.share(replay: 1)
+        return tapMinus
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {Operator.minus.rawValue}
+            .share(replay: 1)
     }()
     private lazy var multipled: Observable<String> = {
-        return tapMultipled.map {Operator.multiplied.rawValue}.share(replay: 1)
+        return tapMultipled
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {Operator.multiplied.rawValue}
+            .share(replay: 1)
     }()
     private lazy var divided: Observable<String> = {
-        return tapDivided.map {Operator.divded.rawValue}.share(replay: 1)
+        return tapDivided
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .map {Operator.divded.rawValue}
+            .share(replay: 1)
     }()
 
 }

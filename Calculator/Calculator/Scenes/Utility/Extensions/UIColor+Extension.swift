@@ -15,6 +15,8 @@ extension UIColor {
         static let buttonBorder = #colorLiteral(red: 0.1569426656, green: 0.568774581, blue: 0.8110592961, alpha: 1)
         static let keyboardButtonBorder = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         static let keyboardButtonShadow = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        static let viewBackground = #colorLiteral(red: 1, green: 0.995285319, blue: 0.9943320817, alpha: 1)
+        static let viewBorder = #colorLiteral(red: 1, green: 1, blue: 0.915939192, alpha: 1)
     }
 }
 
