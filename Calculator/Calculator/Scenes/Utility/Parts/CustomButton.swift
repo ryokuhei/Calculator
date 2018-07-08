@@ -24,6 +24,8 @@ import UIKit
         
         self.layer.borderColor = self.borderColor.cgColor
         self.layer.borderWidth = self.borderWidth
+        self.layer.shadowColor = UIColor.MyTheme.keyboardButtonShadow.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
         
         super.draw(rect)
     }
