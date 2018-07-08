@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00w-bF-BFf">
-                                <rect key="frame" x="57" y="181.66666666666666" width="35" height="57.333333333333343"/>
+                                <rect key="frame" x="77" y="181.66666666666666" width="35" height="57.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="F3L-dM-yLa"/>
                                 </constraints>
@@ -69,9 +69,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2E-8A-IDU">
-                                <rect key="frame" x="102" y="210" width="300" height="0.0"/>
+                                <rect key="frame" x="112" y="210" width="280" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Rui-rG-IDt"/>
+                                    <constraint firstAttribute="width" constant="280" id="Rui-rG-IDt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -83,13 +83,13 @@
                                     <constraint firstAttribute="width" constant="80" id="KrO-5n-yaO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Calculation"/>
+                                <state key="normal" title="Calculate"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="00w-bF-BFf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Aac-aC-OMb" secondAttribute="leading" priority="750" constant="50" id="5Ew-0r-Nfd"/>
-                            <constraint firstItem="o2E-8A-IDU" firstAttribute="leading" secondItem="00w-bF-BFf" secondAttribute="trailing" constant="10" id="84f-Lh-D0C"/>
+                            <constraint firstItem="o2E-8A-IDU" firstAttribute="leading" secondItem="00w-bF-BFf" secondAttribute="trailing" id="84f-Lh-D0C"/>
                             <constraint firstItem="dfo-oO-EBv" firstAttribute="centerY" secondItem="WkD-I7-oEJ" secondAttribute="centerY" id="98p-PJ-Nee"/>
                             <constraint firstItem="M9d-Pl-FTT" firstAttribute="centerY" secondItem="WkD-I7-oEJ" secondAttribute="centerY" id="Chr-nU-Nvl"/>
                             <constraint firstItem="Aac-aC-OMb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o2E-8A-IDU" secondAttribute="trailing" priority="750" constant="20" id="GyR-kd-Qgx"/>
