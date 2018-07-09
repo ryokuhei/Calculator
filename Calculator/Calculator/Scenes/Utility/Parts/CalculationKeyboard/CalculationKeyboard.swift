@@ -62,24 +62,28 @@ class CalculationKeyboard: UIView {
     }
     
     private func setupView() {
-        let view = Bundle.main.loadNibNamed("calculationKeyboard", owner: self, options: nil)?.first as! UIView
-        addSubview(view)
         
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let bindings = ["view": view]
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[view]|",
-            options: NSLayoutFormatOptions(rawValue: 0),
-            metrics: nil,
-            views: bindings))
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[view]|",
-            options: NSLayoutFormatOptions(rawValue: 0),
-            metrics: nil,
-            views: bindings))
+       if let view = R.nib.calculationKeyboard.firstView(owner: self) {
+
+            addSubview(view)
+    
+            view.translatesAutoresizingMaskIntoConstraints = false
+            let bindings = ["view": view]
+            addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|[view]|",
+                options: NSLayoutFormatOptions(rawValue: 0),
+                metrics: nil,
+                views: bindings))
+            addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|[view]|",
+                options: NSLayoutFormatOptions(rawValue: 0),
+                metrics: nil,
+                views: bindings))
+        }
     }
     
     private func setupToolBar() {
+        
         self.toolbar = UIToolbar()
         self.toolbar?.barStyle = .default
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.tapDoneButton))
@@ -92,6 +96,7 @@ class CalculationKeyboard: UIView {
     
     
     private func setupViewModelInputs() {
+        
         if let viewModel = self.viewModel {
             
             let tapZero = self.zero.rx.tap

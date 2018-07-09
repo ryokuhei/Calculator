@@ -48,8 +48,8 @@ class CalculatorViewController: UIViewController  {
     
     private func setupView() {
         let clearButton = UIButton(type: .custom)
-        clearButton.setImage(UIImage(named: "clear_2"), for: .normal)
-        clearButton.setImage(UIImage(named: "clear_1"), for: .highlighted)
+        clearButton.setImage(R.image.clear_2(), for: .normal)
+        clearButton.setImage(R.image.clear_1(), for: .highlighted)
         clearButton.addTarget(self, action: #selector(self.clearFormulaTextView), for: .touchUpInside)
         
         self.calculateText.addSubview(clearButton)

@@ -13,7 +13,7 @@ struct CalculatorBuilder {
     
     static func build() ->UIViewController {
         
-        let vc = UIStoryboard(name:"calculator",bundle: nil).instantiateInitialViewController() as? CalculatorViewController
+        let vc = R.storyboard.calculator.instantiateInitialViewController()
         let vm = CalculatorViewModelImpl(
             calculator: CalculatorImpl()
         )
