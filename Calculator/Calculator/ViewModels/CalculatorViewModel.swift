@@ -35,6 +35,10 @@ protocol CalculatorViewModel: CalculatorInputs, CalculatorOutputs {
 
 class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     
+    let DECIMAL_POINT = 3
+    let MAX_NUMBER_OF_TERMS = 99_999_999
+    let MAX_NUMBER_OF_RESULT = 999_999_999_999_999.0
+    
     lazy var inputs: CalculatorInputs = {self}()
     lazy var outputs: CalculatorOutputs = {self}()
     
@@ -156,7 +160,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                        return Result(error: .unknownError)
                     }
                 }
-                if formulaEntity.lhs >= 100_000_000 || formulaEntity.rhs >= 100_000_000 {
+                if formulaEntity.lhs >= self.MAX_NUMBER_OF_TERMS || formulaEntity.rhs >= self.MAX_NUMBER_OF_TERMS {
                     return Result(error: .inputValueToLarge )
                 }
                 
@@ -196,7 +200,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                     if !result.isFinite {
                         self.error.onNext(.divideByZero)
                         self.resultNumber.onNext(nil)
-                    } else if result >= 1_000_000_000_000_000 {
+                    } else if result >= self.MAX_NUMBER_OF_RESULT {
                         self.error.onNext(.resultValueToLarge)
                         self.resultNumber.onNext(nil)
                     } else {
@@ -224,10 +228,13 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     
     // 表示用のフォーマットへ変換する
     func translateToNumberDisplayFormat(number: NSNumber) ->String {
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ","
         formatter.groupingSize = 3
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = self.DECIMAL_POINT
         
         let displayFormatNumber = formatter.string(from: number) ?? ""
         
