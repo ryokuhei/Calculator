@@ -105,10 +105,10 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     }()
     
     // 通知用
-    var leftNumber   = PublishSubject<Int?>()
-    var rightNumber  = PublishSubject<Int?>()
+    var leftNumber   = PublishSubject<Int64?>()
+    var rightNumber  = PublishSubject<Int64?>()
     var operate      = PublishSubject<Operator?>()
-    var resultNumber = PublishSubject<Float?>()
+    var resultNumber = PublishSubject<Double?>()
     
     // error
     private var error = PublishSubject<CalculationError?>()
@@ -141,7 +141,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                        return Result(error: .unknownError)
                     }
                 }
-                if formulaEntity.lhs >= 100000000 || formulaEntity.rhs >= 100000000 {
+                if formulaEntity.lhs >= 100_000_000 || formulaEntity.rhs >= 100_000_000 {
                     return Result(error: .inputValueToLarge )
                 }
                 
@@ -166,14 +166,14 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                     self.rightNumber.onNext(formula.rhs)
                     self.operate.onNext(formula.operate)
                 
-                    var result: Float
+                    var result: Double
                     switch formula.operate {
                         case .plus:
-                            result = Float(self.calculator.addition(formula.lhs, to: formula.rhs))
+                            result = Double(self.calculator.addition(formula.lhs, to: formula.rhs))
                         case .minus:
-                            result = Float(self.calculator.subtraction(formula.lhs, from: formula.rhs))
+                            result = Double(self.calculator.subtraction(formula.lhs, from: formula.rhs))
                         case .multiplied:
-                            result = Float(self.calculator.maltiplication(formula.lhs, by: formula.rhs))
+                            result = Double(self.calculator.maltiplication(formula.lhs, by: formula.rhs))
                         case .divded:
                             result = self.calculator.division(formula.lhs, by: formula.rhs)
                     }
@@ -181,7 +181,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                     if !result.isFinite {
                         self.error.onNext(.divideByZero)
                         self.resultNumber.onNext(nil)
-                    } else if result >= 1000000000000000 {
+                    } else if result >= 1_000_000_000_000_000 {
                         self.error.onNext(.resultValueToLarge)
                         self.resultNumber.onNext(nil)
                     } else {
@@ -213,7 +213,9 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ","
         formatter.groupingSize = 3
-        return formatter.string(from: number) ?? ""
         
+        let displayFormatNumber = formatter.string(from: number) ?? ""
+        
+        return displayFormatNumber
     }
 }

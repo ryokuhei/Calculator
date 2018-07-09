@@ -9,10 +9,10 @@
 import Foundation
 
 protocol Calculator {
-    func addition(_ lhs: Int, to rhs: Int) ->Int
-    func subtraction(_ lhs: Int, from rhs: Int) ->Int
-    func maltiplication(_ lhs: Int, by rhs: Int) ->Int
-    func division(_ lhs: Int, by rhs: Int) ->Float
+    func addition(_ lhs: Int64, to rhs: Int64) ->Int64
+    func subtraction(_ lhs: Int64, from rhs: Int64) ->Int64
+    func maltiplication(_ lhs: Int64, by rhs: Int64) ->Int64
+    func division(_ lhs: Int64, by rhs: Int64) ->Double
 }
 
 struct CalculatorImpl: Calculator {
@@ -21,22 +21,22 @@ struct CalculatorImpl: Calculator {
     }
     
     // 足し算
-    func addition(_ lhs: Int, to rhs: Int) ->Int {
+    func addition(_ lhs: Int64, to rhs: Int64) ->Int64 {
         return lhs + rhs
     }
     
     // 引き算
-    func subtraction(_ lhs: Int, from rhs: Int) ->Int {
+    func subtraction(_ lhs: Int64, from rhs: Int64) ->Int64 {
         return lhs - rhs
     }
     
     // 掛け算
-    func maltiplication(_ lhs: Int, by rhs: Int) ->Int {
+    func maltiplication(_ lhs: Int64, by rhs: Int64) ->Int64 {
         return lhs * rhs
     }
     
     // わり算
-    func division(_ lhs: Int, by rhs: Int) ->Float {
-        return Float(lhs) / Float(rhs)
+    func division(_ lhs: Int64, by rhs: Int64) ->Double {
+        return Double(lhs) / Double(rhs)
     }
 }

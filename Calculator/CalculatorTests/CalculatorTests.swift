@@ -20,6 +20,8 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(result2, 10)
         let result3 = calculator.addition(0, to: 0)
         XCTAssertEqual(result3, 0)
+        let result4 = calculator.addition(99_999_999, to: 99_999_999)
+        XCTAssertEqual(result4, 199_999_998)
     }
     
     func testSubtraction() {
@@ -38,6 +40,8 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(result2, 9)
         let result3 = calculator.maltiplication(0, by: 0)
         XCTAssertEqual(result3, 0)
+        let result4 = calculator.maltiplication(99_999_999, by: 99_999_999)
+        XCTAssertEqual(result4, 9_999_999_800_000_001)
     }
     
     func testDivision() {

@@ -9,8 +9,8 @@
 import Foundation
 
 struct Formula {
-    let lhs: Int
-    let rhs: Int
+    let lhs: Int64
+    let rhs: Int64
     let operate: Operator
     
     init?(_ formula: String) {
@@ -42,8 +42,8 @@ struct Formula {
             return nil
         }
         
-        guard let lhs = Int(components[0]),
-              let rhs = Int(components[1]) else {
+        guard let lhs = Int64(components[0]),
+              let rhs = Int64(components[1]) else {
                 return nil
         }
         self.lhs = lhs
