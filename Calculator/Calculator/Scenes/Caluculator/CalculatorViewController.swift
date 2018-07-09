@@ -142,23 +142,44 @@ extension CalculatorViewController: UITextFieldDelegate {
 
 extension CalculatorViewController: CalculationKeyboardDelegate {
 
+    // 数式テキストに文字を挿入
     func input(key: String) {
-        self.calculateText.text?.append(key)
+        if let range = self.calculateText.selectedTextRange {
+            self.calculateText.replace(range, withText: key)
+        }
     }
     
+    // 数式テキストをクリア
     func clear() {
-        self.calculateText.text = ""
+        self.calculateText.text?.removeAll()
     }
     
+    // 計算を行う
     func done() {
         self.view.endEditing(true)
         self.viewModel?.inputs.doCalculate.onNext(())
     }
-    
+
+    // 数式テキストの文字削除
     func back() {
-        if let text = self.calculateText.text,
-               text.count >= 1 {
-            self.calculateText.text?.removeLast()
+       
+        // キャレットの範囲を取得
+        if let range = self.calculateText.selectedTextRange {
+            // キャレットで範囲を指定しなかった場合、1つ前の文字を削除
+            if range.isEmpty {
+                guard let start = self.calculateText.position(from: range.start, offset: -1) else {
+                    return
+                }
+                guard let oneBeforeRange = self.calculateText.textRange(from: start, to: range.end) else {
+                    return
+                }
+                self.calculateText.replace(oneBeforeRange, withText: "")
+            } else {
+            // キャレットで範囲を指定した場合、範囲の文字を削除
+                self.calculateText.replace(range, withText: "")
+            }
+            
         }
+        
     }
 }
