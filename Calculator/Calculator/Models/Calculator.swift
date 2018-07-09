@@ -22,21 +22,25 @@ struct CalculatorImpl: Calculator {
     
     // 足し算
     func addition(_ lhs: Int64, to rhs: Int64) ->Int64 {
+        
         return lhs + rhs
     }
     
     // 引き算
     func subtraction(_ lhs: Int64, from rhs: Int64) ->Int64 {
+        
         return lhs - rhs
     }
     
     // 掛け算
     func maltiplication(_ lhs: Int64, by rhs: Int64) ->Int64 {
+        
         return lhs * rhs
     }
     
     // わり算
     func division(_ lhs: Int64, by rhs: Int64) ->Double {
+        
         return Double(lhs) / Double(rhs)
     }
 }

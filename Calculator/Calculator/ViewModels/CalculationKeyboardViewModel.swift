@@ -187,7 +187,7 @@ class CalculationKeyboardViewModelImpl: CalculationKeyboardViewModel, Calculatio
     private lazy var divided: Observable<String> = {
         return tapDivided
             .throttle(0.2, scheduler: MainScheduler.instance)
-            .map {Operator.divded.rawValue}
+            .map {Operator.divided.rawValue}
             .share(replay: 1)
     }()
 

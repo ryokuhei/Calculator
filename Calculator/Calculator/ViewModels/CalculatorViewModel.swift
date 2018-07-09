@@ -129,14 +129,29 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                     return Result(error: .unknownError)
                 }
                 guard let formulaEntity = Formula(formula) else {
+                    let plus       = Operator.plus.rawValue
+                    let minus      = Operator.minus.rawValue
+                    let multiplied = Operator.multiplied.rawValue
+                    let divided    = Operator.divided.rawValue
+                    let operaters = "\(plus)\(minus)/\(multiplied)\(divided)/*//"
+
+                    // "[0-9]+[^0-9]+[0-9]+[^0-9]+[+0-9]"
+                    // 3項以上の場合エラーを表示
                     if formula.isMatchesRegularExpression(pattern: "[0-9]+[^0-9]+[0-9]+[^0-9]+[+0-9]") {
                         return Result(error: .highNumberOfTerms)
+                    // "^([0-9])+"
+                    // 左辺が入力されていない場合エラーを表示
                     } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+") {
                         return Result(error: .leftHandSideIsNotEntered)
-                    } else if !formula.isMatchesRegularExpression(pattern: "[+-/×÷/*//]([+0-9])+") {
+                    //  "[+-/×÷/*//]([+0-9])+"
+                    // 右辺が入力されていない場合エラーを表示
+                    } else if !formula.isMatchesRegularExpression(pattern: "[\(operaters)]([+0-9])+") {
                         return Result(error: .rightHandSideIsNotEntered)
-                    } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+[+-/×÷/*//]([+0-9])+$") {
+                    // "^([0-9])+[+-/×÷/*//]([+0-9])+$"
+                    // 不正な値が入力されていない場合エラーを表示
+                    } else if !formula.isMatchesRegularExpression(pattern: "^([0-9])+[\(operaters)]([+0-9])+$") {
                         return Result(error: .invalidValue)
+                    // その他の理由でFormulaが生成されなかった場合エラーを表示
                     } else {
                        return Result(error: .unknownError)
                     }
@@ -174,7 +189,7 @@ class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
                             result = Double(self.calculator.subtraction(formula.lhs, from: formula.rhs))
                         case .multiplied:
                             result = Double(self.calculator.maltiplication(formula.lhs, by: formula.rhs))
-                        case .divded:
+                        case .divided:
                             result = self.calculator.division(formula.lhs, by: formula.rhs)
                     }
                     

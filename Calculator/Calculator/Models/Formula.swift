@@ -20,24 +20,31 @@ struct Formula {
         
         let components : [String]
         let operate: Operator
-        if formula.contains("+") {
+        
+        if formula.contains(Operator.plus.rawValue) {
             operate = .plus
-            components = formula.components(separatedBy: "+")
-        } else if formula.contains("-") {
+            components = formula.components(separatedBy: Operator.plus.rawValue)
+            
+        } else if formula.contains(Operator.minus.rawValue) {
             operate = .minus
-            components = formula.components(separatedBy: "-")
+            components = formula.components(separatedBy: Operator.minus.rawValue)
+            
+        } else if formula.contains(Operator.multiplied.rawValue) {
+            operate = .multiplied
+            components = formula.components(separatedBy: Operator.multiplied.rawValue)
+            
+        } else if formula.contains(Operator.divided.rawValue) {
+            operate = .divided
+            components = formula.components(separatedBy: Operator.divided.rawValue)
+            
         } else if formula.contains("*") {
             operate = .multiplied
             components = formula.components(separatedBy: "*")
-        } else if formula.contains("×") {
-            operate = .multiplied
-            components = formula.components(separatedBy: "×")
+            
         } else if formula.contains("/") {
-            operate = .divded
+            operate = .divided
             components = formula.components(separatedBy: "/")
-        } else if formula.contains("÷") {
-            operate = .divded
-            components = formula.components(separatedBy: "÷")
+            
         } else {
             return nil
         }
@@ -46,6 +53,7 @@ struct Formula {
               let rhs = Int64(components[1]) else {
                 return nil
         }
+        
         self.lhs = lhs
         self.rhs = rhs
         self.operate = operate

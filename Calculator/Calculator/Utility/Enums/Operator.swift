@@ -12,5 +12,5 @@ enum Operator: String {
     case plus       = "+"
     case minus      = "-"
     case multiplied = "×"
-    case divded     = "÷"
+    case divided     = "÷"
 }
