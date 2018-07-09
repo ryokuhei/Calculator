@@ -24,7 +24,7 @@ class CalculatorViewController: UIViewController  {
     @IBOutlet weak var operate: UILabel!
     
     // 計算用インプットテキスト
-    @IBOutlet weak var calculateText: UITextField!
+    @IBOutlet weak var formula: UITextField!
     // 計算開始ボタン
     @IBOutlet weak var calculateButton: CastomButton!
     
@@ -52,21 +52,21 @@ class CalculatorViewController: UIViewController  {
         clearButton.setImage(R.image.clear_1(), for: .highlighted)
         clearButton.addTarget(self, action: #selector(self.clearFormulaTextView), for: .touchUpInside)
         
-        self.calculateText.addSubview(clearButton)
-        self.calculateText.clearButtonMode = .always
+        self.formula.addSubview(clearButton)
+        self.formula.clearButtonMode = .always
         
     }
     
     @objc private func clearFormulaTextView() {
-        self.calculateText.text?.removeAll()
+        self.formula.text?.removeAll()
     }
     
     private func setupKeyboard() {
         
         let keyboard = CalculationKeyboardBuilder.build()
         keyboard.delegate = self
-        self.calculateText.inputView = keyboard
-        self.calculateText.inputAccessoryView = keyboard.toolbar
+        self.formula.inputView = keyboard
+        self.formula.inputAccessoryView = keyboard.toolbar
 
         // キーボード開閉アニメーション *処理内容はUIViewController+Extension.swiftに記載
         let notification = NotificationCenter.default
@@ -85,8 +85,8 @@ class CalculatorViewController: UIViewController  {
     private func setupViewModelInputs() {
         
         if let viewModel = self.viewModel {
-            let calculateText = self.calculateText.rx.text
-            calculateText.bind(to: viewModel.inputs.formula).disposed(by: disposeBag)
+            let formula = self.formula.rx.text
+            formula.bind(to: viewModel.inputs.formula).disposed(by: disposeBag)
             let tapCalculate = self.calculateButton.rx.tap
             tapCalculate.do(onNext: {_ in self.view.endEditing(true)})
                 .bind(to: viewModel.inputs.doCalculate).disposed(by: disposeBag)
@@ -130,15 +130,15 @@ extension CalculatorViewController: CalculationKeyboardDelegate {
     // 数式テキストに文字を挿入
     func input(key: String) {
         
-        if let range = self.calculateText.selectedTextRange {
-            self.calculateText.replace(range, withText: key)
+        if let range = self.formula.selectedTextRange {
+            self.formula.replace(range, withText: key)
         }
     }
     
     // 数式テキストをクリア
     func clear() {
         
-        self.calculateText.text?.removeAll()
+        self.formula.text?.removeAll()
     }
     
     // 計算を行う
@@ -152,19 +152,19 @@ extension CalculatorViewController: CalculationKeyboardDelegate {
     func back() {
        
         // キャレットの範囲を取得
-        if let range = self.calculateText.selectedTextRange {
+        if let range = self.formula.selectedTextRange {
             // キャレットで範囲を指定しなかった場合、1つ前の文字を削除
             if range.isEmpty {
-                guard let start = self.calculateText.position(from: range.start, offset: -1) else {
+                guard let start = self.formula.position(from: range.start, offset: -1) else {
                     return
                 }
-                guard let oneBeforeRange = self.calculateText.textRange(from: start, to: range.end) else {
+                guard let oneBeforeRange = self.formula.textRange(from: start, to: range.end) else {
                     return
                 }
-                self.calculateText.replace(oneBeforeRange, withText: "")
+                self.formula.replace(oneBeforeRange, withText: "")
             } else {
             // キャレットで範囲を指定した場合、範囲の文字を削除
-                self.calculateText.replace(range, withText: "")
+                self.formula.replace(range, withText: "")
             }
             
         }

@@ -117,8 +117,8 @@
                     </view>
                     <connections>
                         <outlet property="calculateButton" destination="BLE-J5-x7V" id="1ZT-fn-nEH"/>
-                        <outlet property="calculateText" destination="lyu-Cw-7e5" id="gJp-wq-Qi3"/>
                         <outlet property="equal" destination="00w-bF-BFf" id="yf7-0E-Vc5"/>
+                        <outlet property="formula" destination="lyu-Cw-7e5" id="Imf-Qx-fdP"/>
                         <outlet property="leftNumber" destination="WkD-I7-oEJ" id="K80-Pw-tON"/>
                         <outlet property="operate" destination="M9d-Pl-FTT" id="yDf-gk-SGl"/>
                         <outlet property="resultNumber" destination="o2E-8A-IDU" id="6Au-aM-q3k"/>
