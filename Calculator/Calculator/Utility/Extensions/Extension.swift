@@ -57,6 +57,17 @@ extension String {
     
 }
 
+extension Double {
+    func trancrationOfDecimalPlace(numberOf decimalPlace: Int) ->Double {
+        
+        var decimalPoint = 10
+        for _ in 1...decimalPlace {
+            decimalPoint = decimalPoint * 10
+        }
+        return Double(self * Double(decimalPoint)) / Double(decimalPoint)
+    }
+}
+
 extension Float {
     func trancrationOfDecimalPlace(numberOf decimalPlace: Int) ->Float {
 
