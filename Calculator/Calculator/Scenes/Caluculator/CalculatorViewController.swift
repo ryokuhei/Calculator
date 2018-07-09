@@ -36,7 +36,6 @@ class CalculatorViewController: UIViewController  {
         super.viewDidLoad()
 
         self.setupView()
-        self.setupDelegate()
         self.setupNotification()
         self.setupKeyboard()
         self.setupViewModelOutputs()
@@ -57,6 +56,7 @@ class CalculatorViewController: UIViewController  {
         self.calculateText.clearButtonMode = .always
         
     }
+    
     @objc private func clearFormulaTextView() {
         self.calculateText.text?.removeAll()
     }
@@ -72,11 +72,6 @@ class CalculatorViewController: UIViewController  {
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(customKeyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notification.addObserver(self, selector: #selector(customKeyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
-    
-    private func setupDelegate() {
-        self.calculateText.delegate = self
     }
     
     private func setupNotification() {
@@ -130,20 +125,11 @@ class CalculatorViewController: UIViewController  {
     
 }
 
-extension CalculatorViewController: UITextFieldDelegate {
-    
-    // Enterでキーボードを閉じる
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        self.calculateText.resignFirstResponder()
-//
-//        return true
-//    }
-}
-
 extension CalculatorViewController: CalculationKeyboardDelegate {
 
     // 数式テキストに文字を挿入
     func input(key: String) {
+        
         if let range = self.calculateText.selectedTextRange {
             self.calculateText.replace(range, withText: key)
         }
@@ -151,11 +137,13 @@ extension CalculatorViewController: CalculationKeyboardDelegate {
     
     // 数式テキストをクリア
     func clear() {
+        
         self.calculateText.text?.removeAll()
     }
     
     // 計算を行う
     func done() {
+        
         self.view.endEditing(true)
         self.viewModel?.inputs.doCalculate.onNext(())
     }
@@ -180,6 +168,6 @@ extension CalculatorViewController: CalculationKeyboardDelegate {
             }
             
         }
-        
     }
+    
 }
