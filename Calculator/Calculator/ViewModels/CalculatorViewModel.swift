@@ -35,7 +35,7 @@ protocol CalculatorViewModel: CalculatorInputs, CalculatorOutputs {
 
 class CalculatorViewModelImpl: CalculatorViewModel, CalculatorOutputs {
     
-    let DECIMAL_POINT = 3
+    let DECIMAL_POINT = 5
     let MAX_NUMBER_OF_TERMS = 99_999_999
     let MAX_NUMBER_OF_RESULT = 999_999_999_999_999.0
     
